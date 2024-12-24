@@ -1,0 +1,226 @@
+.homePage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  user-select: None;
+  }
+  
+  .hero {
+    position: relative;
+    min-height: 657px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .HeroImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .mainContent {
+    position: relative;
+    max-width: 718px;
+    margin: 39px auto 0;
+    padding: 0 20px;
+  }
+  
+  .mainTitle {
+    color: #fff;
+    font: 400 48px/52px Ruluko, sans-serif;
+    letter-spacing: 0.25px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .about {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(217, 217, 217, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aboutImageWrapper {
+    position: relative;
+    min-height: 496px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .aboutImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .aboutButton {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background-color: rgb(157, 195, 255);
+    border: none;
+    border-radius: 50px;
+    padding: 18px 58px;
+    font: 900 24px Roboto, sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .aboutButton:hover {
+    transform: translateY(-2px);
+  }
+  
+  .aboutContent {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aboutTitle {
+    font: 48px/1 Salsa, sans-serif;
+    margin: 0 0 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .aboutText {
+    font: 20px/1.6 Roboto, sans-serif;
+    margin: 0;
+    color: #333;
+  }
+  
+  .decorativeImage {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }  
+  
+  .categories {
+    padding: 40px;
+  }
+  
+  .categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .categoryCard {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1;
+  }
+  
+  .categoryImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .categoryLabel {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font: 900 24px Roboto, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .products {
+    padding: 40px;
+  }
+  
+  .productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .reviews {
+    padding: 40px;
+    background-color: rgba(217, 217, 217, 0.3);
+  }
+  
+  .reviewGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .home-features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #fff;
+  }
+  
+  .home-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .home-featureIcon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  
+  .home-featureText {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  @media (max-width: 991px) {
+    .heroContent {
+      margin-top: 20px;
+    }
+  
+    .heroTitle {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  
+    .about {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  
+    .aboutButton {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .categoryGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .productGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .reviewGrid {
+      grid-template-columns: 1fr;
+    }
+  }

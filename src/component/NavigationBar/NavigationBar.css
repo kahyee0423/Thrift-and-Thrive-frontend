@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); /*"KauShan Script" font*/
+
+.navigationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: lightblue;
+  height: 50px;
+  user-select: None;
+}
+
+.brandName {
+  font-size: 2em;
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  flex-shrink: 0;
+  font-family: "Kaushan Script", serif;
+  font-weight: 400;
+  font-style: normal;
+  align-self: center; 
+  width: 30%;
+  cursor: pointer;
+}
+
+.navigationLinks {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  align-items: center;
+  width: 50%;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+
+}
+
+  @media (max-width: 991px) {
+    .navigationContainer {
+      padding: 0 20px;
+    }
+  }
+  
+  .brandName {
+    color: rgba(0, 0, 0, 1);
+    flex-grow: 1;
+    width: 178px;
+    font: 400 36px Kaushan Script, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .navigationLinks {
+    align-self: start;
+    display: flex;
+    margin-top: 19px;
+    align-items: start;
+    gap: 40px 54px;
+    color: rgba(0, 0, 0, 1);
+    white-space: nowrap;
+    font: 400 15px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .navigationLinks {
+      max-width: 100%;
+      white-space: initial;
+    }
+  }
+  
+  .navLink {
+    line-height: 1;
+    letter-spacing: 0.25px;
+  }
+  
+  .iconContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px 48px;
+    margin: auto 0;
+  }
+  
+  .icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 40px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .cartIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    align-self: stretch;
+  }

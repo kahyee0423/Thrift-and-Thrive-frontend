@@ -1,0 +1,120 @@
+.header {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .navigation {
+    background-color: rgb(192, 236, 246);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 39px;
+    font: 400 20px Roboto, sans-serif;
+    user-select: None;
+    margin-left: 3rem;
+  }
+  
+  .link {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .link:hover,
+  .link:focus {
+    color: #328da3;
+    outline: none;
+  }
+  
+  .link:focus-visible {
+    outline: 2px solid #328da3;
+    outline-offset: 2px;
+  }
+  
+  .brand {
+    color: #000;
+    font: 400 36px 'Kaushan Script', cursive;
+    margin: 0;
+    user-select: None;
+  }
+  
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    user-select: None;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .categoryNav {
+    background-color: #fff;
+    display: flex;
+    justify-content: center; /* Centers the navigation horizontally */
+    align-items: center; /* Centers the navigation vertically */
+    width: 100%; /* Full width of the container */
+    height: 60px; /* Adjusted height for better visuals */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+  }
+  
+  .categories {
+    display: flex;
+    align-items: center; /* Vertically aligns the items */
+    justify-content: center; /* Centers items within the nav */
+    list-style: none;
+    gap: 40px; /* Adjust the spacing between items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .categories a {
+    color: #000;
+    text-decoration: none;
+    font: 400 15px/1 Roboto, sans-serif;
+    letter-spacing: 0.25px;
+    transition: color 0.2s ease;
+  }
+  
+  .categories a:hover,
+  .categories a:focus {
+    color: #328da3;
+    outline: none;
+  }
+  
+  .categories a:focus-visible {
+    outline: 2px solid #328da3;
+    outline-offset: 2px;
+  }
+  
+  @media (max-width: 991px) {
+    .navigation {
+      padding: 10px 20px;
+    }
+  
+    .categoryNav {
+      padding: 20px 20px 0;
+    }
+  
+    .categories {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }

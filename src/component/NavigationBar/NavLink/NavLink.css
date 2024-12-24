@@ -1,0 +1,7 @@
+.navLink {
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    font: 400 15px Roboto, sans-serif;
+    align-self: center; 
+}

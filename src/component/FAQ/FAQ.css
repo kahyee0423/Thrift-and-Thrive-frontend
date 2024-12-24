@@ -1,0 +1,18 @@
+.header {
+    background-color: rgba(237, 251, 197, 0.2);
+    overflow: hidden;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    letter-spacing: 0.25px;
+    padding: 36px 70px 56px;
+    font: Rhodium Libre, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      font-size: 40px;
+      line-height: 19px;
+      padding: 0 20px;
+    }
+  }
