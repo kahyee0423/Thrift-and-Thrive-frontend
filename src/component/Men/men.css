@@ -44,13 +44,14 @@
 }
 
 .productsGrid {
-  width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-left: 20px;
   box-sizing: border-box;
   padding: 4rem;
+  width: 100%; 
+  padding: 16px;
 }
 
 .paginationWrapper {
@@ -91,29 +92,7 @@
     color: #fff;
     border-radius: 4px;
   }
+  
 .paginationIcon:hover {
   transform: scale(1.1);
-}
-
-@media (max-width: 991px) {
-  .pageTitle {
-    padding: 0 20px;
-  }
-
-  .contentWrapper {
-    padding: 0 20px;
-  }
-
-  .sidebar {
-    width: 100%;
-    margin-top: 40px;
-    padding: 20px;
-  }
-
-  .productsGrid {
-    width: 100%;
-    grid-template-columns: 1fr;
-    margin-left: 0;
-    margin-top: 20px;
-  }
 }

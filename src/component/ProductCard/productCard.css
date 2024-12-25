@@ -1,13 +1,14 @@
+/* productCard.css */
 .productCard {
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 1);
   display: flex;
-  min-width: 240px;
-  max-width: 315px;
+  /* Remove the width properties here - these are no longer needed as we will use the grid for width */
   flex-direction: column;
   justify-content: start;
   padding: 16px 16px 57px;
   border: 1px solid rgba(217, 217, 217, 1);
+  
 }
 
 .productCard:hover {
@@ -27,7 +28,7 @@
 .productContent {
   display: flex;
   margin-top: 16px;
-  width: 208px;
+  width: 208px; /* keep this content width as the card should not change its width to be smaller than the content*/
   max-width: 100%;
   flex-direction: column;
   justify-content: start;
