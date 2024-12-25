@@ -65,6 +65,15 @@
   .icon:hover {
     transform: scale(1.1);
   }
+
+  .profileIconContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+  .profileIcon{
+    cursor: pointer;
+  }
   
   .categoryNav {
     background-color: #fff;

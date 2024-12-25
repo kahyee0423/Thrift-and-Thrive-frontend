@@ -1,0 +1,55 @@
+.userMenuContainer {
+    position: relative;
+  }
+  
+  .menuTrigger {
+      cursor: pointer;
+  }
+  
+  .menuContainer {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      min-width: 200px;
+      z-index: 100;
+  }
+  
+  
+  .signInButton,
+  .createAccountButton {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .signInButton:hover,
+  .createAccountButton:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 5px 0;
+  }
+  
+  .adminLink {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .adminLink:hover {
+    background-color: #f0f0f0;
+  }

@@ -12,6 +12,9 @@ import FAQ from './component/FAQ/FAQ';
 import TermsOfService from './component/TermsOfService/TermsOfService';
 import PrivacyPolicy from './component/PrivacyPolicy/PrivacyPolicy';
 import ReturnPolicy from './component/ReturnPolicy/ReturnPolicy';
+import AdminLogin from './component/User/Admin/AdminLogin';
+import UserLogin from './component/User/Login/UserLogin';
+import UserSignUp from './component/User/SignUp/UserSignUp';
 
 const App = () => {
   return (
@@ -27,6 +30,9 @@ const App = () => {
       <Route path="/TermsOfService" element={<TermsOfService />} />
       <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       <Route path="/ReturnPolicy" element={<ReturnPolicy />} />
+      <Route path="/AdminLogin" element={<AdminLogin />} />
+      <Route path="/UserLogin" element={<UserLogin />} />
+      <Route path="/UserSignUp" element={<UserSignUp />} />
     </Routes>
   );
 };

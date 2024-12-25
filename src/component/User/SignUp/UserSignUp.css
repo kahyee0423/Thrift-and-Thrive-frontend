@@ -1,0 +1,91 @@
+.pageContainer {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 51px 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      padding: 40px 20px;
+    }
+  }
+  
+  .accountForm {
+      width: 90%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+  .formTitle {
+      color: #000;
+      font: 400 40px 'Roboto Condensed', sans-serif;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+  .inputGroup {
+      width: 100%;
+      margin-bottom: 13px;
+    }
+    
+    .formInput {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(217, 217, 217, 0.4);
+        border: none;
+        font: 20px Roboto, sans-serif;
+        color: #000;
+      }
+      
+    .submitButton {
+        background-color: #9DC3FF;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 18px 40px;
+        font: 600 18px Roboto, sans-serif;
+        cursor: pointer;
+        margin-top: 30px;
+        width: auto;
+      }
+  
+  .visuallyHidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  
+  @media (max-width: 991px) {
+      .formTitle {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+  }
+  
+  @media (max-width: 600px) {
+      .formInput {
+          font-size: 18px;
+           padding: 15px;
+      }
+  
+      .submitButton {
+          font-size: 16px;
+      }
+  }

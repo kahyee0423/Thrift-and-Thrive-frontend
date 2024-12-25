@@ -1,0 +1,97 @@
+.loginPage {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 42px 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      padding: 40px 16px;
+    }
+  }
+  
+  .loginForm {
+    width: 650px;
+    max-width: 90%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formTitle {
+    font: 400 48px 'Roboto Condensed', sans-serif;
+    margin: 0 0 41px;
+    text-align: center; 
+    font-weight: bold;
+  }
+  
+  .formGroup {
+    width: 120%;
+    margin-bottom: 26px;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.4);
+    border: none;
+    font-size: 20px; 
+    font-family: Roboto, sans-serif;
+  }
+  
+  .forgotPassword {
+    align-self: flex-start;
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+
+  }
+  
+  .submitButton {
+    background-color: #080ff0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font: 600 20px Roboto, sans-serif;
+    padding: 20px 40px; 
+    width: auto;
+  }
+  
+  .createAccount {
+    color: #000;
+    font-size: 16px;
+    letter-spacing: 1.25px;
+    text-decoration: none;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 991px) {
+    .formTitle {
+      font-size: 40px;
+    }
+  
+    .submitButton {
+      padding: 18px 30px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .formInput {
+      font-size: 18px; 
+      padding: 15px; 
+    }
+    .submitButton {
+       font-size: 18px;
+    }
+  }

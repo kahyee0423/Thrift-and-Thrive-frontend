@@ -1,0 +1,80 @@
+.pageContainer {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 2rem;
+  }
+  
+  .formTitle {
+    color: #000;
+    font: 400 'Roboto Condensed', sans-serif;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 650px;
+    align-items: center;
+  }
+  
+  .inputGroup {
+    width: 120%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.4);
+    border: none;
+    font: 300 24px Roboto, sans-serif;
+  }
+  
+  .submitButton {
+    background-color: rgb(157, 195, 255);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 1.25rem 4rem;
+    font: 600 20px Roboto, sans-serif;
+    cursor: pointer;
+    margin-top: 2rem;
+  }
+  
+  .submitButton:hover,
+  .submitButton:focus {
+    opacity: 0.9;
+    outline: none;
+  }
+  
+  @media (max-width: 991px) {
+    .formTitle {
+      font-size: 40px;
+    }
+  }
+  
+  /* Add media query for smaller screens */
+  @media (max-width: 768px) {
+    .mainContent {
+      padding: 1rem;
+    }
+    .formTitle {
+      font-size: 30px;
+      margin-bottom: 1.5rem;
+    }
+  }
