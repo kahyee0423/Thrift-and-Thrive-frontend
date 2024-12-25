@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterSection from './FilterSection';
+import FilterSection from './FilterSection/FilterSection.jsx';
 
 const SideBar = ({ filters }) => {
   return (

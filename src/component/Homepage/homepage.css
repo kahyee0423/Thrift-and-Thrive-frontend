@@ -13,9 +13,8 @@
   min-height: calc(100vh - 125px); 
   width: 100%;
   overflow: hidden;
-  margin-top: 0;
+  margin: 0;
 }
-
 
 .HeroImage {
   position: absolute;

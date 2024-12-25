@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FilterSection.css'
 
 const FilterSection = ({ title, filters = [] }) => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -15,7 +16,7 @@ const FilterSection = ({ title, filters = [] }) => {
       <h2>{title}</h2>
       <ul>
         {filters.map((filter, index) => (
-          <li key={index}>
+          <ul key={index} className="filter-element">
             <label>
               <input
                 type="checkbox"
@@ -25,7 +26,7 @@ const FilterSection = ({ title, filters = [] }) => {
               />
               {filter}
             </label>
-          </li>
+          </ul>
         ))}
       </ul>
     </section>
