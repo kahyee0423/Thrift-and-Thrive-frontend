@@ -1,18 +1,12 @@
-import React, { useState } from 'react'
-import './kids.css'
+import React, { useState } from 'react';
+import './kids.css';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/footer';
-import ProductCard from '../ProductCard/productCard';
 import SideBar from '../SideBar/SideBar';
+import ProductList from '../ProductList/productList';
+import { SHOP_PRODUCTS } from '../../utils/data';
 
-const products = Array(23).fill({
-  image: "https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/9ccdd56b6dadb8838db5b38d01ae2d77da2ff92f4582e0c18c4b19697847d7d6?apiKey=904907665fd04df7b56e80ff4b56e284&",
-  title: "Text",
-  price: "0",
-  description: "Body text."
-});
-
-const productsPerPage = 12; 
+const productsPerPage = 12;
 
 const kidsFilters = [
   { title: 'Category', options: ["T-Shirts & Tops", "Shorts & Pants", "Dresses", "Rompers"] },
@@ -22,28 +16,23 @@ const kidsFilters = [
 const Kids = () => {
   const [currentPage, setCurrentPage] = useState(1);
     
-      const totalPages = Math.ceil(products.length / productsPerPage);
-      const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-      const goToPage = (page) => {
-      setCurrentPage(page)
-    };
-
+  const totalPages = Math.ceil(SHOP_PRODUCTS.filter(product => product.category === "kids").length / productsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const goToPage = (page) => {
+    setCurrentPage(page)
+  };
     const goToPreviousPage = () => {
-      if (currentPage > 1) {
-          setCurrentPage(currentPage - 1);
-      }
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   const goToNextPage = () => {
-      if (currentPage < totalPages) {
-          setCurrentPage(currentPage + 1);
-      }
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
   
-    const startIndex = (currentPage - 1) * productsPerPage;
-      const endIndex = startIndex + productsPerPage;
-      const displayedProducts = products.slice(startIndex, endIndex);
-
   return (
     <main className="Page">
       <NavigationBar />
@@ -61,9 +50,7 @@ const Kids = () => {
         <SideBar filters={kidsFilters} />
 
           <section className="productsGrid">
-            {displayedProducts.map((product, index) => (
-              <ProductCard key={index} {...product} />
-            ))}
+          <ProductList category="kids" currentPage={currentPage} productsPerPage={productsPerPage} />
           </section>
         </div>
         <div className="paginationWrapper">
@@ -78,7 +65,7 @@ const Kids = () => {
                     {number}
                   </span>
               ))}
-          <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/5a0728a287c40c52aa4fff3691c1876efa4f8bfbc04804cbdae35788467475a4?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="Next page" className="paginationIcon" onClick={goToNextPage}/>
+          <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/5a0728a287c40c52aa4fff3691c1876efa4f8bfbc04804cbdae35788467475a4?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="Next page" className="paginationIcon" onClick={goToNextPage} />
         </div>
         </div>
       </div>

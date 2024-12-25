@@ -2,15 +2,9 @@ import React, { useState } from 'react'
 import './accessories.css'
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/footer';
-import ProductCard from '../ProductCard/productCard';
 import SideBar from '../SideBar/SideBar';
-
-const products = Array(23).fill({
-  image: "https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/9ccdd56b6dadb8838db5b38d01ae2d77da2ff92f4582e0c18c4b19697847d7d6?apiKey=904907665fd04df7b56e80ff4b56e284&",
-  title: "Text",
-  price: "0",
-  description: "Body text."
-});
+import ProductList from '../ProductList/productList';
+import { SHOP_PRODUCTS } from '../../utils/data';
 
 const productsPerPage = 12; 
 
@@ -21,7 +15,7 @@ const accessoriesFilters = [
 const Accessories = () => {
   const [currentPage, setCurrentPage] = useState(1);
     
-      const totalPages = Math.ceil(products.length / productsPerPage);
+      const totalPages = Math.ceil(SHOP_PRODUCTS.filter(product => product.category === "accessories").length / productsPerPage);
       const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
       const goToPage = (page) => {
       setCurrentPage(page)
@@ -38,10 +32,6 @@ const Accessories = () => {
           setCurrentPage(currentPage + 1);
       }
   };
-  
-    const startIndex = (currentPage - 1) * productsPerPage;
-      const endIndex = startIndex + productsPerPage;
-      const displayedProducts = products.slice(startIndex, endIndex);
 
   return (
     <main className="Page">
@@ -59,11 +49,9 @@ const Accessories = () => {
       <div className="sideBarAndProductList">
       <SideBar filters={accessoriesFilters} />
 
-        <section className="productsGrid">
-          {displayedProducts.map((product, index) => (
-            <ProductCard key={index} {...product} />
-          ))}
-        </section>
+          <section className="productsGrid">
+          <ProductList category="accessories" currentPage={currentPage} productsPerPage={productsPerPage} />
+          </section>
       </div>
 
       <div className="paginationWrapper">
