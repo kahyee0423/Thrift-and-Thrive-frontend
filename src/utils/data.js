@@ -259,3 +259,241 @@ export const termsContent = {
     phone: '+604-7171234'
   }
 };
+
+export const PRIVACYPOLICY = [
+  {
+    id: 'information',
+    title: '1. Information We Collect',
+    content: [
+      {
+        subtitle: "We collect the following types of information to provide and improve our services:",
+        items: [],
+        description:[]
+      },
+      {
+        subtitle: '1.1 Personal Information',
+        items: [
+          'Name',
+          'Email address',
+          'Phone number',
+          'Billing and shipping addresses',
+          'Payment information (processed securely via third-party payment providers)'
+        ],
+        description:[]
+      },
+      {
+        subtitle: '1.2 Non-Personal Information',
+        items: [
+          'Browser type and version',
+          'IP address',
+          'Device type',
+          'Operating system',
+          'Browsing behavior (e.g., pages visited, time spent)'
+        ],
+        description:[]
+      },
+      {
+        subtitle: '1.3 Cookies and Tracking Technologies',
+        items:[],
+        description: 'We use cookies to enhance your browsing experience. These may include session cookies, persistent cookies, and third-party cookies for analytics or advertising purposes. You can adjust your browser settings to manage or disable cookies.'
+      },
+    ]
+  },
+  {
+    id: 'usage',
+    title: '2. How We Use Your Information',
+    content: [
+      {
+        subtitle: 'We use your information for the following purposes:',
+        items: [
+          'To process and fulfill your orders',
+          'To communicate with you about your orders, inquiries, and promotions',
+          'To improve our website, services, and customer experience',
+          'To prevent fraudulent transactions and ensure website security',
+          'To send marketing emails (with your consent)'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'sharing',
+    title: '3. How We Share Your Information',
+    content: [
+      {
+        subtitle: 'We respect your privacy and only share your information in the following ways:',
+        items: [
+          'Service Providers: We may share your information with third-party vendors who assist us with payment processing, shipping, analytics, or marketing',
+          'Legal Compliance: We may disclose information if required by law or to protect our rights',
+          'Business Transfers: In the event of a merger, acquisition, or sale, your information may be transferred to the new owners'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'security',
+    title: '4. Data Security',
+    content: [
+      {
+        subtitle: 'We implement industry-standard security measures to protect your personal information. This includes encryption, secure servers, and regular monitoring. However, no system is completely secure, and we cannot guarantee absolute protection.',
+        items: [],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'rights',
+    title: '5. Your Rights',
+    content: [
+      {
+        subtitle: 'You have the following rights regarding your personal information:',
+        items: [
+          'Access: Request access to the information we hold about you',
+          'Correction: Request corrections to your personal data if it is inaccurate',
+          'Deletion: Request the deletion of your personal information (subject to legal and contractual obligations)',
+          'Opt-Out: Unsubscribe from marketing emails or update your cookie preferences'
+        ],
+        description: 'To exercise your rights, contact us at thriftthrive.my@gmail.com'
+      }
+    ]
+  },
+  {
+    id: 'thirdParty',
+    title: '6. Third-Party Links',
+    content: [
+      {
+        subtitle: 'Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. Please review their privacy policies before providing any information.',
+        items: [],
+        description: []
+      }
+    ]
+  },
+  {
+    id: 'children',
+    title: '7. Children\'s Privacy',
+    content: [
+      {
+        subtitle: 'Our website is not intended for use by children under the age of 13. We do not knowingly collect personal information from children. If we learn that we have inadvertently collected such information, we will delete it promptly.',
+        items: [],
+        description: []
+      }
+    ]
+  },
+  {
+    id: 'changes',
+    title: '8. Changes to This Policy',
+    content: [
+      {
+        subtitle: 'We may update this Privacy Policy periodically to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be posted on this page with a revised effective date.',
+        items: [],
+        description:[]
+      }
+    ]
+  }
+];
+
+export const contactInfo = {
+  effectiveDate: '21-12-2024',
+  email: 'thriftthrive.my@gmail.com',
+  phone: '+604-7171234'
+};
+
+export const RETURNPOLICY = [
+  {
+    id: 'eligibility',
+    title: '1. Eligibility for Returns',
+    content: [
+      {
+        subtitle: 'We accept returns under the following conditions:',
+        items: [
+          'The item must be returned within 14 days of receiving your order.',
+          'The item must be in its original condition, unworn, unwashed, and with all tags attached.',
+          'Sale items and final clearance items are not eligible for returns.'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'non-returns',
+    title: '2. Non-Returnable Items',
+    content: [
+      {
+        subtitle: 'The following items are not eligible for return:',
+        items: [
+          'Intimates and undergarments.',
+          'Accessories, including jewelry and hair accessories.',
+          'Items marked as "Final Sale."Intimates and undergarments',
+          'Accessories, including jewelry and hair accessories.',
+          'Items marked as "Final Sale."'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'initiate-return',
+    title: '3. How to Initiate a Return',
+    content: [
+      {
+        subtitle: 'To start a return, please follow these steps:',
+        items: [
+          'Email us at thriftthrive.my@gmail.com with your order number, the item(s) you’d like to return, and the reason for the return.',
+          'Our customer service team will review your request and provide you with return instructions and a return shipping address.'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'return-cost',
+    title: '4. Return Shipping Costs',
+    content: [
+      {
+        subtitle: [],
+        items: [
+          'Customers are responsible for return shipping costs unless the return is due to an error on our part (e.g., wrong item sent, defective item)',
+          'We recommend using a trackable shipping method for your return to ensure safe delivery.'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'refunds',
+    title: '5. Refunds',
+    content: [
+      {
+        subtitle: 'Once we receive your return and verify its condition, we will process your refund:',
+        items: [
+          'Refunds will be issued to your original payment method within 7-10 business days.',
+          'Original shipping fees are non-refundable.'
+        ],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'exchange',
+    title: '6. Exchanges',
+    content: [
+      {
+        subtitle: 'We currently do not offer direct exchanges. If you would like a different size or style, please return the item for a refund and place a new order for the desired item.',
+        items: [],
+        description:[]
+      }
+    ]
+  },
+  {
+    id: 'damaged-items',
+    title: '7. Damaged or Defective Items',
+    content: [
+      {
+        subtitle: 'If you receive a damaged or defective item, please contact us at thriftthrive.my@gmail.com within 7 days of receiving your order. Include photos of the item and your order details, and we’ll resolve the issue as quickly as possible.',
+        items: [],
+        description:[]
+      }
+    ]
+  },
+];
