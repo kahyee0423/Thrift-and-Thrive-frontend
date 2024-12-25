@@ -3,17 +3,15 @@
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 1);
   display: flex;
-  /* Remove the width properties here - these are no longer needed as we will use the grid for width */
   flex-direction: column;
   justify-content: start;
   padding: 16px 16px 57px;
   border: 1px solid rgba(217, 217, 217, 1);
-  
 }
 
 .productCard:hover {
-  transform: translateY(-10px); /* Move up by 4 pixels */
-  transition: transform 0.3s ease-in-out; /* Apply transition to transform */
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -23,12 +21,12 @@
   object-position: center;
   width: 100%;
   min-height: 247px;
+  max-height: 250px; /* Reduced max height */
 }
 
 .productContent {
   display: flex;
   margin-top: 16px;
-  width: 208px; /* keep this content width as the card should not change its width to be smaller than the content*/
   max-width: 100%;
   flex-direction: column;
   justify-content: start;
@@ -38,6 +36,8 @@
   flex: 1;
   width: 100%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .productPrice {
@@ -49,4 +49,5 @@
 .productDescription {
   margin-top: 8px;
   width: 100%;
+  word-break: break-word;
 }

@@ -1,0 +1,35 @@
+.termsContent {
+    background-color: #fff;
+  }
+
+  .terms-title{
+    padding: 3rem;
+    width: 75%;
+  }
+  
+  .pageTitle {
+    color: #000;
+    text-align: center;
+    letter-spacing: 0.25px;
+    margin: 0 0 40px;
+    background-color: #36d7c783;
+    font-size: 40px;
+  }
+  
+  .lastUpdated {
+    font: 400 20px Roboto, sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .terms-content{
+    padding: 45px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section-Title {
+    font: 700 20px Roboto, sans-serif;
+    margin: 0 0 15px;
+  }

@@ -194,3 +194,68 @@ export const faqData = [
     answer: "If you have any questions or need assistance, you can reach our customer support team at thriftthrive.my@gmail.com. We aim to respond to all inquiries within 2-3 business days."
   }
 ];
+
+export const termsContent = {
+  lastUpdated: '21.12.2024',
+  introduction: 'Welcome to Thrift and Thrive! By accessing or using our website (the "Site") and purchasing products from us, you agree to the following terms and conditions. Please read them carefully.',
+  sections: [
+    {
+      title: '1. Acceptance of Terms',
+      content: 'By using the Site and purchasing products, you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please refrain from using the Site.'
+    },
+    {
+      title: '2. Account Registration',
+      content: 'To make purchases on our Site, you may be required to create an account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.'
+    },
+    {
+      title: '3. Product Information',
+      content: 'We strive to provide accurate and up-to-date product descriptions, including sizing, condition, and materials. However, we do not guarantee the accuracy, completeness, or reliability of any product information. All items are pre-loved or vintage, and each product may show slight signs of wear.'
+    },
+    {
+      title: '4. Ordering and Payment',
+      content: 'Once you place an order, you are committing to purchase the selected items. Payment is required at the time of purchase. We accept payment through credit/debit cards and other secure payment methods available at checkout. If we are unable to process your payment, your order may be canceled.'
+    },
+    {
+      title: '5. Shipping and Delivery',
+      content: 'We aim to process and ship orders promptly. Shipping costs will be calculated at checkout based on your location. Delivery times may vary depending on your location and the shipping method chosen. You will receive a tracking number once your order has been shipped.'
+    },
+    {
+      title: '6. Returns and Exchanges',
+      content: 'We offer returns and exchanges within 14 days of receiving your order. Items must be in their original condition with tags attached. Please refer to our Return Policy for detailed instructions on how to return or exchange an item.'
+    },
+    {
+      title: '7. Intellectual Property',
+      content: 'All content on the Site, including text, images, logos, and graphics, is owned by Thrift and Thrive or its content suppliers and is protected by copyright laws. You may not use, reproduce, or distribute any content without prior written permission from Thrift and Thrive.'
+    },
+    {
+      title: '8. Prohibited Activities',
+      content: 'You agree not to engage in any of the following activities while using the Site: Engaging in fraudulent or illegal activities, posting harmful, offensive, or defamatory content, using the Site in a manner that disrupts or damages its functionality or security.'
+    },
+    {
+      title: '9. Privacy Policy',
+      content: 'Your use of the Site is governed by our Privacy Policy, which explains how we collect, use, and protect your personal information.'
+    },
+    {
+      title: '10. Limitation of Liability',
+      content: 'Thrift and Thrive is not responsible for any indirect, incidental, or consequential damages arising from your use of the Site or products purchased. Our total liability is limited to the amount paid for the specific product(s) in question.'
+    },
+    {
+      title: '11. Indemnification',
+      content: 'You agree to indemnify and hold harmless Thrift and Thrive, its affiliates, officers, employees, and agents from any claims, damages, or expenses arising from your use of the Site or violation of these Terms.'
+    },
+    {
+      title: '12. Changes to Terms',
+      content: 'We reserve the right to modify or update these Terms of Service at any time. Any changes will be posted on this page, and the updated version will be effective immediately upon posting. Please review these Terms periodically for any changes.'
+    },
+    {
+      title: '13. Governing Law',
+      content: 'These Terms of Service are governed by and construed in accordance with the laws of Malaysia. Any disputes arising from these Terms will be resolved in the courts of Pulau Pinang, Malaysia.'
+    }
+  ],
+  contactInfo: {
+    title: '14. Contact Information',
+    content: 'If you have any questions about these Terms of Service, please contact us at:',
+    email: 'thriftthrive.my@gmail.com',
+    phone: '+604-7171234'
+  }
+};

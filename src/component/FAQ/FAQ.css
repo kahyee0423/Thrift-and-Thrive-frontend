@@ -1,4 +1,4 @@
-.header {
+.common-head {
     background-color: rgba(237, 251, 197, 0.2);
     overflow: hidden;
     color: rgba(0, 0, 0, 1);
@@ -6,6 +6,7 @@
     letter-spacing: 0.25px;
     padding: 36px 70px 56px;
     font: Rhodium Libre, -apple-system, Roboto, Helvetica, sans-serif;
+    text-align: center;
   }
   
   @media (max-width: 991px) {
@@ -14,5 +15,37 @@
       font-size: 40px;
       line-height: 19px;
       padding: 0 20px;
+    }
+  }
+
+  .pageWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 2rem 0;
+  }
+  
+  .page-Header {
+    background-color: rgba(237, 251, 197, 0.2);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .page-Header h1 {
+    color: #000;
+    font-family: 'Rhodium Libre', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .pageHeader h1 {
+      font-size: 2rem;
     }
   }
