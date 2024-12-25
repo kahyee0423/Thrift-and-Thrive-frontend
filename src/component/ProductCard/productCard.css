@@ -5,13 +5,15 @@
   min-width: 240px;
   max-width: 315px;
   flex-direction: column;
-  color: var(--sds-color-text-default-default);
   justify-content: start;
   padding: 16px 16px 57px;
-  font: var(--sds-typography-body-font-weight-regular)
-    var(--sds-typography-body-size-medium) / 1.4
-    var(--sds-typography-body-font-family);
   border: 1px solid rgba(217, 217, 217, 1);
+}
+
+.productCard:hover {
+  transform: translateY(-10px); /* Move up by 4 pixels */
+  transition: transform 0.3s ease-in-out; /* Apply transition to transform */
+  cursor: pointer;
 }
 
 .productImage {
@@ -40,13 +42,10 @@
 .productPrice {
   align-self: start;
   margin-top: 8px;
-  font-weight: var(--sds-typography-body-font-weight-strong);
   white-space: nowrap;
 }
 
 .productDescription {
   margin-top: 8px;
   width: 100%;
-  font-size: var(--sds-typography-body-size-small);
-  color: var(--sds-color-text-default-secondary);
 }
