@@ -40,7 +40,7 @@ width: 30%;
 background-color: rgba(255, 255, 255, 1);
 padding: 31px 32px;
 font: 500 20px Roboto, sans-serif;
-box-sizing: border-box; /* Include padding in the width calculation */
+box-sizing: border-box; 
 }
 
 .productsGrid {
@@ -49,7 +49,8 @@ box-sizing: border-box; /* Include padding in the width calculation */
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-left: 20px;
-  box-sizing: border-box; /* Include padding in the width calculation */
+  box-sizing: border-box; 
+  padding: 4rem;
 }
 
 .pagination {

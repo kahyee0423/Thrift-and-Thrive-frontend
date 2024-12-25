@@ -21,7 +21,7 @@ const Homepage = () => {
       <Header />
       
       <section className="hero">
-        <img src="./asset/Brand.png" alt="Hero banner" className="HeroImage"/>
+        <img src="./asset/homepage.jpeg" alt="Hero banner" className="HeroImage"/>
         <div className="mainContent">
           <h2 className="mainTitle">
             Great style with greater purpose,
@@ -51,26 +51,26 @@ const Homepage = () => {
       <section className="categories">
         <div className="categoryGrid">
           <div className="categoryCard">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9588e569312cc799f5cf4878ccd8dab1626ca5ca2130b1caee45b333daefce3f?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="Men's Fashion" className="categoryImage" />
+            <img src="./asset/men.jpg" alt="Men's Fashion" className="categoryImage" onClick={() => navigate('/men')}/>
             <div className="categoryLabel">Men</div>
           </div>
           <div className="categoryCard">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9588e569312cc799f5cf4878ccd8dab1626ca5ca2130b1caee45b333daefce3f?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="Men's Fashion" className="categoryImage" />
+            <img src="./asset/fashion.png" alt="Women's Fashion" className="categoryImage" onClick={() => navigate('/women')}/>
             <div className="categoryLabel">Women</div>
           </div>
           <div className="categoryCard">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9588e569312cc799f5cf4878ccd8dab1626ca5ca2130b1caee45b333daefce3f?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="Men's Fashion" className="categoryImage" />
+            <img src="./asset/kids.jpg" alt="Kid's Fashion" className="categoryImage" onClick={() => navigate('/kids')}/>
             <div className="categoryLabel">Kids</div>
           </div>
           <div className="categoryCard">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9588e569312cc799f5cf4878ccd8dab1626ca5ca2130b1caee45b333daefce3f?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="Men's Fashion" className="categoryImage" />
+            <img src="./asset/hat.png" alt="Accessories' Fashion" className="categoryImage" onClick={() => navigate('/accessories')}/>
             <div className="categoryLabel">Accessories</div>
           </div>
         </div>
       </section>
 
       <section className="products">
-        <h2 className="sectionTitle">New Styles Added Daily</h2>
+        <h2 className="home-sectionTitle">New Styles Added Daily</h2>
         <div className="productGrid">
           {PRODUCTS.map((product, index) => (
             <ProductCard key={index} {...product} />
@@ -79,7 +79,7 @@ const Homepage = () => {
       </section>
 
       <section className="reviews">
-        <h2 className="sectionTitle">What Our Customer Say</h2>
+        <h2 className="home-sectionTitle">What Our Customer Say</h2>
         <div className="reviewGrid">
           {REVIEWS.map((review, index) => (
             <ReviewCard key={index} {...review} />
@@ -91,7 +91,7 @@ const Homepage = () => {
           {FEATURES.map((feature, index) => (
               <div key={index} className="home-feature">
                   <img
-                    src={`https://cdn.builder.io/api/v1/image/assets/TEMP/${index}.png`} 
+                    src={feature.image} 
                     alt={feature.title}
                     className="home-featureIcon"
                   />

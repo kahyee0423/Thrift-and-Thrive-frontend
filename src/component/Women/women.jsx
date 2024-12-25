@@ -23,7 +23,7 @@ const women = () => {
       <NavigationBar />
       
       <img
-        src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/d5ea5cec4a1c048758162fc4af9c372bef9895db4c233d61dab94ea29b96b9cd?apiKey=904907665fd04df7b56e80ff4b56e284&"
+        src="./asset/women3.jpg"
         alt="Women's Collection Banner"
         className="banner"
       />

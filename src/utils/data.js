@@ -54,11 +54,11 @@ export const REVIEWS = [
 ];
 
 export const FEATURES = [
-  { title: 'Quality Assured', description: 'Get your items delivered quickly.' },
-  { title: 'Eco-friendly', description: 'Your payments are safe with us.' },
-  { title: 'Loved by Customer', description: 'We offer support anytime, anywhere.' },
-  { title: 'Swift Delivery', description: '' },
-  { title: 'Easy Returns', description:''}
+  { image: `${process.env.PUBLIC_URL}/asset/quality.png`, title: 'Quality Assured', description: 'Get your items delivered quickly.' },
+  { image: `${process.env.PUBLIC_URL}/asset/eco-friendly.png`, title: 'Eco-friendly', description: 'Your payments are safe with us.' },
+  { image: `${process.env.PUBLIC_URL}/asset/star.png`, title: 'Loved by Customer', description: 'We offer support anytime, anywhere.' },
+  { image: `${process.env.PUBLIC_URL}/asset/delivery.png`, title: 'Swift Delivery', description: '' },
+  { image: `${process.env.PUBLIC_URL}/asset/easy_return.png`, title: 'Easy Returns', description:''}
 ];
 
 export const feature = [

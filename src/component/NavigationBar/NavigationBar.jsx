@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 const navigationLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Women', href: '/women' },
     { label: 'Men', href: '/men' },
+    { label: 'Women', href: '/women' },
     { label: 'Kids', href: '/kids' },
     { label: 'Accessories', href: '/accessories' }
 ]
