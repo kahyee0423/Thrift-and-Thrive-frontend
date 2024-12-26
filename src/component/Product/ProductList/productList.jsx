@@ -13,20 +13,21 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const displayedProducts = filteredProducts.slice(startIndex, endIndex);
-     console.log("Displayed Products:", displayedProducts)
+    console.log("Displayed Products:", displayedProducts)
     
     return (
-      <section aria-label="Product Listings">
+    <section aria-label="Product Listings">
         {displayedProducts.map((product, index) => (
-          <ProductCard
+        <ProductCard
             key={index}
             image={product.image}
             title={product.title}
             price={product.price}
             description={product.description}
-          />
+            id={index + 1} // Assigning ID based on index + 1 since shop_product does not have an ID
+        />
         ))}
-      </section>
+    </section>
     );
 };
 

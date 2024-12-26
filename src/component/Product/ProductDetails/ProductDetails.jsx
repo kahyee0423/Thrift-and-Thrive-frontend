@@ -1,22 +1,10 @@
-import React from 'react';
-import './ProductDetails.css';
+import React from 'react'
+import './ProductDetails.css'
 import NavigationBar from '../../NavigationBar/NavigationBar';
 import Footer from '../../Footer/footer';
-import { useParams } from 'react-router-dom';
-import { productDetails, mockProducts } from '../../../utils/data';
 import ProductCard from '../ProductCard/productCard';
 
 const ProductDetails = () => {
-  const { id } = useParams();
-    const product = mockProducts.find((p) => p.id === parseInt(id))
-
-  if (!product) {
-    return <p>Product not found</p>;
-  }
-  const {  description, category, image, title, price, id:productId} = product;
-  const { condition, materials, shippingInfo, sizeMeasurements, relatedProducts } = productDetails
-  const relatedProductsList = relatedProducts.filter(p => p.category === category).slice(0,3);
-    
   return (
     <div className="productDetailsContainer">
       <NavigationBar />
@@ -24,20 +12,20 @@ const ProductDetails = () => {
         <section className="productSection">
           <div className="productImageContainer">
             <img 
-              src={image} 
-              alt={title} 
+              src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/048bdf5fc2213e727373d1cbeca7cc74d60c02d37abb796e43dd2d1aaa768179?apiKey=904907665fd04df7b56e80ff4b56e284&" 
+              alt="Brown Regular Fit Top" 
               className="productImage"
             />
           </div>
           <div className="productInfo">
-            <h1 className="productTitle">{title}</h1>
-            <p className="productPrice">RM {price}</p>
+            <h1 className="productTitle">Brown Regular Fit Top</h1>
+            <p className="productPrice">RM 20.00</p>
             <p className="productCondition">
-              Condition: <span className="conditionValue">{condition}</span>
+              Condition: <span className="conditionValue">Like New</span>
             </p>
             <button 
               className="addToCartButton"
-              aria-label={`Add ${title} to cart`}
+              aria-label="Add Brown Regular Fit Top to cart"
             >
               Add to Cart
             </button>
@@ -52,11 +40,6 @@ const ProductDetails = () => {
                 <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/3358615032dbabcc29fa5bad7a971ff30499cf88dec23cf3bc516c09e474e8b8?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="" className="accordionIcon" />
               </button>
               <div id="size-content" className="accordionContent" hidden>
-              {sizeMeasurements?.chest ? <p>Chest: {sizeMeasurements.chest}</p> : null}
-              {sizeMeasurements?.length ? <p>Length: {sizeMeasurements.length}</p> : null}
-                {sizeMeasurements?.shoulders ? <p>Shoulders: {sizeMeasurements.shoulders}</p> : null}
-                {sizeMeasurements?.sleeves ? <p>Sleeves: {sizeMeasurements.sleeves}</p> : null}
-                 {sizeMeasurements?.fit ? <p>Fit: {sizeMeasurements.fit}</p> : null}
               </div>
               
               <button 
@@ -65,16 +48,9 @@ const ProductDetails = () => {
                 aria-controls="materials-content"
               >
                 Materials
-                <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/3358615032dbabcc29fa5bad7a971ff30499cf88dec23cf3bc516c09e474e8b8?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="" className="accordionIcon" />
+                <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/3358615032dbabcc29fa5bad7a971ff30499cf88dec23cf3bc516c09e474e8b8?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="" className={styles.accordionIcon} />
               </button>
               <div id="materials-content" className="accordionContent" hidden>
-              {materials?.main ? <p>Main Material: {materials.main}</p> : null}
-              {materials?.secondary ? <p>Secondary Material: {materials.secondary}</p> : null}
-                  {materials?.care ? (
-                    <ul>
-                        {materials.care.map((item, index) => (<li key={index}>{item}</li>))}
-                     </ul>
-                  ) : null}
               </div>
 
               <button 
@@ -86,21 +62,6 @@ const ProductDetails = () => {
                 <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/3358615032dbabcc29fa5bad7a971ff30499cf88dec23cf3bc516c09e474e8b8?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="" className="accordionIcon" />
               </button>
               <div id="shipping-content" className="accordionContent" hidden>
-                    <p>Shipping Methods</p>
-                    <ul>
-                        {shippingInfo?.methods.map((method, index) => (
-                            <li key={index}>
-                                {method.name}: RM {method.price} ({method.duration})
-                            </li>
-                        ))}
-                      </ul>
-                      {shippingInfo?.returns ? (<>
-                         <p>Returns Policy</p>
-                        <p>Window: {shippingInfo.returns.window}</p>
-                         <p>Condition: {shippingInfo.returns.condition}</p>
-                         <p>Refund: {shippingInfo.returns.refund}</p>
-                         </>) : null }
-                 
               </div>
             </div>
           </div>
@@ -111,9 +72,9 @@ const ProductDetails = () => {
             YOU MAY ALSO LIKE
           </h2>
           <div className="relatedProductsGrid">
-              {relatedProductsList.map((relatedProduct, index) => (
-                  <ProductCard key={index} {...relatedProduct} description={'A great product!'}/>
-              ))}
+            {relatedProducts.map((product, index) => (
+              <ProductCard key={index} {...product} />
+            ))}
           </div>
         </section>
       </main>
@@ -122,4 +83,4 @@ const ProductDetails = () => {
   );
 }
 
-export default ProductDetails;
+export default ProductDetails
