@@ -43,7 +43,7 @@ const UserLogin = () => {
         Sign in
       </button>
 
-      <a href="/register" className="createAccount">
+      <a href="/UserSignUp" className="createAccount">
         Create account
       </a>
     </form>

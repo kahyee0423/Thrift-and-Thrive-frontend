@@ -34,27 +34,6 @@ export const SHOP_PRODUCTS = [
     category: "men" 
   },
   {
-    image: "./asset/delivery.png",
-    title: "Product Title 1",
-    price: "$25.00",
-    description: "Product description 1...",
-    category: "men" 
-  },
-  {
-    image: "./asset/delivery.png",
-    title: "Product Title 1",
-    price: "$25.00",
-    description: "Product description 1...",
-    category: "men" 
-  },
-  {
-    image: "./asset/delivery.png",
-    title: "Product Title 1",
-    price: "$25.00",
-    description: "Product description 1...",
-    category: "men" 
-  },
-  {
       image: "url_to_image_3",
       title: "Product Title 3",
       price: "$20.00",
@@ -69,20 +48,6 @@ export const SHOP_PRODUCTS = [
       category: "kids"
     },
     {
-      image: "url_to_image_4",
-      title: "Product Title 4",
-      price: "$20.00",
-      description: "Product description 4...",
-      category: "kids"
-    },
-    {
-      image: "url_to_image_4",
-      title: "Product Title 4",
-      price: "$20.00",
-      description: "Product description 4...",
-      category: "kids"
-    },
-     {
       image: "url_to_image_5",
       title: "Product Title 5",
       price: "$20.00",
