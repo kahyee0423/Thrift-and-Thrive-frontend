@@ -1,7 +1,7 @@
 import React from 'react';
 import './productList.css'
-import { SHOP_PRODUCTS } from '../../../utils/data';
 import ProductCard from '../ProductCard/productCard';
+import { SHOP_PRODUCTS } from '../../utils/data';
 
 const ProductList = ({ category, currentPage, productsPerPage }) => {
     
@@ -24,7 +24,7 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
             title={product.title}
             price={product.price}
             description={product.description}
-            id={index + 1} // Assigning ID based on index + 1 since shop_product does not have an ID
+            id={index + 1} 
         />
         ))}
     </section>

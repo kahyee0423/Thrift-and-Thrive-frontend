@@ -16,7 +16,6 @@ import AdminLogin from './component/User/Admin/AdminLogin';
 import UserLogin from './component/User/Login/UserLogin';
 import UserSignUp from './component/User/SignUp/UserSignUp';
 import Cart from './component/Cart/Cart';
-import ProductDetails from './component/Product/ProductDetails/ProductDetails';
 
 const App = () => {
   return (
@@ -36,7 +35,6 @@ const App = () => {
       <Route path="/UserLogin" element={<UserLogin />} />
       <Route path="/UserSignUp" element={<UserSignUp />} />
       <Route path="/Cart" element={<Cart />} />
-      <Route path="/ProductDetails" element={<ProductDetails />} />
     </Routes>
   );
 };

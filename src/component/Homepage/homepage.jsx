@@ -7,7 +7,7 @@ import { PRODUCTS } from '../../utils/data.js';
 import { REVIEWS } from '../../utils/data.js';
 import { FEATURES } from '../../utils/data'; 
 import { useNavigate } from 'react-router-dom';
-import ProductCard from '../Product/ProductCard/productCard.jsx';
+import ProductCard from '../ProductCard/productCard.jsx';
 
 const Homepage = () => {
   const navigate = useNavigate();

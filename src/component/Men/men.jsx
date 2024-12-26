@@ -4,7 +4,7 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/footer';
 import SideBar from '../SideBar/SideBar';
 import { SHOP_PRODUCTS } from '../../utils/data';
-import ProductList from '../Product/ProductList/productList';
+import ProductList from '../ProductList/productList';
 
 const productsPerPage = 12;
 
