@@ -74,6 +74,7 @@
     letter-spacing: 1.25px;
     text-decoration: none;
     margin-top: 5px;
+    margin-bottom: 30px;
   }
   
   @media (max-width: 991px) {

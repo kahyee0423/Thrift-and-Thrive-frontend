@@ -3,8 +3,8 @@ import './accessories.css'
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/footer';
 import SideBar from '../SideBar/SideBar';
-import ProductList from '../ProductList/productList';
 import { SHOP_PRODUCTS } from '../../utils/data';
+import ProductList from '../Product/ProductList/productList';
 
 const productsPerPage = 12; 
 

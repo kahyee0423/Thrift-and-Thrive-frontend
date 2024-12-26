@@ -1,0 +1,202 @@
+.productDetailsContainer {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .productSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .productImageContainer {
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    min-height: 500px;
+  }
+  
+  .productImage {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .productTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .productPrice {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .productCondition {
+    font-size: 1rem;
+    color: #000000;
+  }
+  
+  .conditionValue {
+    font-style: italic;
+    font-weight: 300;
+  }
+  
+  .addToCartButton {
+    background-color: #9dc3ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+  }
+  
+  .addToCartButton:hover {
+    background-color: #7ba9ff;
+  }
+  
+  .addToCartButton:focus {
+    outline: 2px solid #4a90ff;
+    outline-offset: 2px;
+  }
+  
+  .accordionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .accordionButton {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  .accordionButton:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .accordionButton:focus {
+    outline: 2px solid #4a90ff;
+    outline-offset: 2px;
+  }
+  
+  .accordionIcon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+  }
+  
+  .accordionButton[aria-expanded="true"] .accordionIcon {
+    transform: rotate(180deg);
+  }
+  
+  .accordionContent {
+    padding: 1rem 0;
+  }
+  
+  .relatedProducts {
+    margin-top: 4rem;
+  }
+  
+  .relatedProductsTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .relatedProductsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .productSection {
+      grid-template-columns: 1fr;
+    }
+  
+    .mainContent {
+      padding: 1rem;
+    }
+  
+    .productImageContainer {
+      min-height: 300px;
+    }
+  
+    .productTitle {
+      font-size: 1.5rem;
+    }
+  
+    .productPrice {
+      font-size: 1.25rem;
+    }
+  
+    .addToCartButton {
+      width: 100%;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .accordionIcon,
+    .addToCartButton {
+      transition: none;
+    }
+  }
+  
+  @media screen and (forced-colors: active) {
+    .addToCartButton {
+      border: 1px solid ButtonText;
+    }
+    
+    .accordionButton {
+      border: 1px solid ButtonText;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .mainContent {
+      padding: 4rem;
+    }
+  }

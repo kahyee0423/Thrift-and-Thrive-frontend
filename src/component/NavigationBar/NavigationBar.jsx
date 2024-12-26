@@ -2,7 +2,6 @@ import React from 'react';
 import './NavigationBar.css';
 import UserMenu from '../BarComponent/UserMenu/UserMenu';
 import NavigationLink from './NavLink/NavLink.jsx';
-import NavigationIcon from './NavIcon/NavIcon.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const navigationLinks = [
@@ -36,6 +35,10 @@ const icons = [
 const NavigationBar = () => {
   const navigate = useNavigate();
 
+  const goToCart = () => {
+    navigate('/Cart');
+  }
+
   return (
     <nav className="navigationContainer" role="navigation" aria-label="Main navigation">
       <h1 className="brandName" onClick={() => navigate('/')}>
@@ -57,7 +60,7 @@ const NavigationBar = () => {
                   />
                   </UserMenu>
                 </div>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/17d5135b7486aa3c4a854e8f937b6ce2bafe4c45bfbcc3829df8ebfcf7088d96?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="icon" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/17d5135b7486aa3c4a854e8f937b6ce2bafe4c45bfbcc3829df8ebfcf7088d96?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="icon" onClick={goToCart} />
       </div>
     </nav>
   );

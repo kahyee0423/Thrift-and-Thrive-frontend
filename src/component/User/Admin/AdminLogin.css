@@ -45,7 +45,7 @@
     font: 300 24px Roboto, sans-serif;
   }
   
-  .submitButton {
+  .admin-submitButton {
     background-color: rgb(157, 195, 255);
     color: #fff;
     border: none;
@@ -54,10 +54,11 @@
     font: 600 20px Roboto, sans-serif;
     cursor: pointer;
     margin-top: 2rem;
+    margin-bottom: 30px;
   }
   
-  .submitButton:hover,
-  .submitButton:focus {
+  .admin-submitButton:hover,
+  .admin-submitButton:focus {
     opacity: 0.9;
     outline: none;
   }

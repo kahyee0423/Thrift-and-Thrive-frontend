@@ -1,13 +1,13 @@
 import React from 'react';
 import './homepage.css';
 import Header from '../Header/header.jsx';
-import ProductCard from '../ProductCard/productCard.jsx';
 import ReviewCard from '../ReviewCard/reviewCard.jsx';
 import Footer from '../Footer/footer.jsx';
 import { PRODUCTS } from '../../utils/data.js';
 import { REVIEWS } from '../../utils/data.js';
 import { FEATURES } from '../../utils/data'; 
 import { useNavigate } from 'react-router-dom';
+import ProductCard from '../Product/ProductCard/productCard.jsx';
 
 const Homepage = () => {
   const navigate = useNavigate();

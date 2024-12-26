@@ -17,6 +17,7 @@ const Footer = () => {
           <h2 className="sectionTitle">ACCOUNT</h2>
           <ul>
             <li><a href="/account">My Account</a></li>
+            <li><a href="/Cart">My Cart</a></li>
             <li><a href="/orders">Order History</a></li>
           </ul>
         </div>

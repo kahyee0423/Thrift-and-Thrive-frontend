@@ -1,8 +1,15 @@
 import React from 'react';
 import './header.css';
 import UserMenu from '../BarComponent/UserMenu/UserMenu';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const goToCart = () => {
+    navigate('/Cart');
+  }
+
     return (
         <header className="header">
           <nav className="navigation">
@@ -22,7 +29,7 @@ const Header = () => {
                   />
                   </UserMenu>
                 </div>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/17d5135b7486aa3c4a854e8f937b6ce2bafe4c45bfbcc3829df8ebfcf7088d96?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="icon" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/17d5135b7486aa3c4a854e8f937b6ce2bafe4c45bfbcc3829df8ebfcf7088d96?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="icon" onClick={goToCart}/>
             </div>
           </nav>
           <nav className="categoryNav">

@@ -33,7 +33,7 @@ const AdminLogin = () => {
               aria-required="true"
             />
           </div>
-          <button type="submit" className="submitButton">Sign in</button>
+          <button type="submit" className="admin-submitButton">Sign in</button>
           </form>
     </main>
     <Footer />
