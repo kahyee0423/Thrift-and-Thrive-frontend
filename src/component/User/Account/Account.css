@@ -1,0 +1,23 @@
+.accountPage {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 40px 60px;
+  }
+  
+  .account-divider {
+    border: 1px solid #000;
+    margin: 40px 0;
+    width: 300%;
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      padding: 20px;
+    }
+  }

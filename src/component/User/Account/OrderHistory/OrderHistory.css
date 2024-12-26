@@ -1,0 +1,21 @@
+.orderHistory {
+    margin-top: 40px;
+    width: 300%;
+  }
+  
+  .sectionTitle {
+    font: 500 48px/1 Roboto, sans-serif;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  .emptyState {
+    font: 300 24px/1 Roboto, sans-serif;
+    color: #000;
+  }
+  
+  @media (max-width: 991px) {
+    .sectionTitle {
+      font-size: 40px;
+    }
+  }

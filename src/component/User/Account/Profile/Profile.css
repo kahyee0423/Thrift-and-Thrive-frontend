@@ -1,0 +1,44 @@
+.userProfile {
+    margin-bottom: 40px;
+    width: 300%;
+  }
+  
+  .sectionTitle {
+    font: 500 48px/1 Roboto, sans-serif;
+    color: #000;
+    margin-bottom: 30px;
+  }
+  
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .userDetail {
+    font: 24px/1 Roboto, sans-serif;
+    color: #000;
+  }
+  
+  .signOutButton {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font: 20px/2 Roboto, sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .signOutIcon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 991px) {
+    .sectionTitle {
+      font-size: 40px;
+    }
+  }

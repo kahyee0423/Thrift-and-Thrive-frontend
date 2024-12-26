@@ -11,11 +11,7 @@
     padding: 90px;
     user-select: none;
   }
-
-  .heading{
-    margin-top: -1.5rem;
-  }
-  
+ 
   @media (max-width: 991px) {
     .contactSection {
       max-width: 100%;
