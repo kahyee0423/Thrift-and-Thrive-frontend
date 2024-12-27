@@ -17,6 +17,7 @@ import UserLogin from './component/User/Login/UserLogin';
 import UserSignUp from './component/User/SignUp/UserSignUp';
 import Cart from './component/Cart/Cart';
 import Account from './component/User/Account/Account';
+import Checkout from './component/Cart/Checkout/Checkout';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
       <Route path="/UserSignUp" element={<UserSignUp />} />
       <Route path="/Cart" element={<Cart />} />
       <Route path="/Account" element={<Account />} />
+      <Route path="/Checkout" element={<Checkout />} />
     </Routes>
   );
 };

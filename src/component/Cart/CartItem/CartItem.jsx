@@ -7,7 +7,7 @@ const CartItem = ({ image, price }) => {
             <div className="productImageContainer">
                 <img src={image} alt="Product" className="productImage" />
             </div>
-            <div className="quantity"> {/* Added quantity column */}
+            <div className="quantity"> 
                  <div className="quantityControl" role="spinbutton" tabIndex="0">
                     <button className="quantityButton" aria-label="Decrease quantity">-</button>
                     <span className="quantity">1</span>

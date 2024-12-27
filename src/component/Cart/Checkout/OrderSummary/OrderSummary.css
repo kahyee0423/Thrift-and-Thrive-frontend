@@ -1,0 +1,69 @@
+.orderSummary {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 150%;
+    margin-left: -10rem;
+    height: 400%;
+  }
+  
+  .orderSummary-sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 1.5rem;
+  }
+  
+  .orderSummary-productItem {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  
+  .orderSummary-productImage {
+    width: 77px;
+    height: 77px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .orderSummary-productName {
+    flex-grow: 1;
+    font-size: 1.25rem;
+    color: #000;
+  }
+  
+  .orderSummary-productPrice {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .orderSummary-summaryDetails {
+    margin-top: 1.5rem;
+  }
+  
+  .orderSummary-summaryRow {
+    margin-left: -3rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .orderSummary-summaryTotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  @media (max-width: 768px) {
+    .orderSummary {
+      padding: 1.5rem;
+    }
+  }

@@ -3,8 +3,19 @@ import './Cart.css';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/footer';
 import CartItem from './CartItem/CartItem';
+import Checkout from './Checkout/Checkout';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+    const navigate = useNavigate();
+
+    const goToCheckout =()=>{
+        navigate('/Checkout');
+    }
+    const goToHomePage =()=>{
+        navigate('/');
+    }
+
     return (
         <div className="cartPage">
             <NavigationBar />
@@ -31,8 +42,8 @@ const Cart = () => {
                         </p>
 
                         <div className="cart-actionButtons">
-                            <button className="checkoutButton">Check out</button>
-                            <button className="continueButton">Continue shopping</button>
+                            <button className="checkoutButton" onClick={goToCheckout}>Check out</button>
+                            <button className="continueButton" onClick={goToHomePage}>Continue shopping</button>
                         </div>
                     </div>
                 </section>
