@@ -2,9 +2,18 @@ import React from 'react'
 import './UserLogin.css'
 import NavigationBar from '../../NavigationBar/NavigationBar.jsx'
 import Footer from '../../Footer/footer.jsx'
+import { useNavigate } from 'react-router-dom'
 
 const UserLogin = () => {
+
+  const navigate = useNavigate();
+
+  const goToProfile =() => {
+    navigate('/Account');
+  }
   return (
+
+
     <div className="loginPage">
     <NavigationBar />
     <main className="mainContent">
@@ -39,7 +48,7 @@ const UserLogin = () => {
         Forgot your password?
       </a>
 
-      <button type="submit" className="submitButton">
+      <button type="submit" className="submitButton" onClick={goToProfile}>
         Sign in
       </button>
 

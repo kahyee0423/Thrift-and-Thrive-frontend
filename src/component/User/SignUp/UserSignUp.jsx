@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './UserSignUp.css'
 import NavigationBar from '../../NavigationBar/NavigationBar';
 import Footer from '../../Footer/footer';
+import { useNavigate } from 'react-router-dom';
 
 const UserSignUp = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,12 @@ const UserSignUp = () => {
       [e.target.name]: e.target.value
     });
   };
+
+  const navigate = useNavigate();
+
+  const goToProfile =() => {
+    navigate('/Account');
+  }
 
   return (
     <div className="pageContainer">
@@ -106,6 +113,7 @@ const UserSignUp = () => {
         type="submit"
         className="submitButton"
         aria-label="Create account"
+        onClick={goToProfile}
       >
         Create
       </button>
