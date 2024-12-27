@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NavigationBar.css';
 import UserMenu from '../BarComponent/UserMenu/UserMenu';
 import NavigationLink from './NavLink/NavLink.jsx';
@@ -31,38 +31,63 @@ const icons = [
   },
 ];
 
-
 const NavigationBar = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
   const navigate = useNavigate();
+
+  const toggleSearch = () => {
+    setIsSearchVisible((prev) => !prev);
+  };
 
   const goToCart = () => {
     navigate('/Cart');
-  }
+  };
 
   return (
-    <nav className="navigationContainer" role="navigation" aria-label="Main navigation">
-      <h1 className="brandName" onClick={() => navigate('/')}>
-        Thrift & Thrive
-      </h1>
-      <div className="navigationLinks">
-        {navigationLinks.map((link) => (
-          <NavigationLink key={link.href} text={link.label} href={link.href} />
-        ))}
-      </div>
-      <div className="iconContainer">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/36bd4803749ebf16a297874d8258a6451d3e7e1c17d1de5765715dae049b01c0?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="icon" />
-              <div className="profileIconContainer">
-                 <UserMenu>
-                 <img
+    <>
+      {isSearchVisible ? (
+        <div className="search-bar-container">
+          <div className="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button onClick={toggleSearch}>X</button>
+          </div>
+        </div>
+      ) : (
+        <nav className="navigationContainer" role="navigation" aria-label="Main navigation">
+          <h1 className="brandName" onClick={() => navigate('/')}>
+            Thrift & Thrive
+          </h1>
+          <div className="navigationLinks">
+            {navigationLinks.map((link) => (
+              <NavigationLink key={link.href} text={link.label} href={link.href} />
+            ))}
+          </div>
+          <div className="iconContainer">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/36bd4803749ebf16a297874d8258a6451d3e7e1c17d1de5765715dae049b01c0?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284"
+              alt="Search Icon"
+              className="icon"
+              onClick={toggleSearch}
+            />
+            <div className="profileIconContainer">
+              <UserMenu>
+                <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/dbe2ec369d8b7b55d00b115c6082130fcd6fb6ee04a6e1f6d3b964407de76cb2?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284"
                   alt="Profile Icon"
                   className="icon profileIcon"
-                  />
-                  </UserMenu>
-                </div>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/17d5135b7486aa3c4a854e8f937b6ce2bafe4c45bfbcc3829df8ebfcf7088d96?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="icon" onClick={goToCart} />
-      </div>
-    </nav>
+                />
+              </UserMenu>
+            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/17d5135b7486aa3c4a854e8f937b6ce2bafe4c45bfbcc3829df8ebfcf7088d96?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284"
+              alt="Cart Icon"
+              className="icon"
+              onClick={goToCart}
+            />
+          </div>
+        </nav>
+      )}
+    </>
   );
 };
 
