@@ -7,7 +7,7 @@ const HeroSection = () => {
       <h2 className="title">About Us</h2>
       <div className="hero-content">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/95c94bb248db5d883dfcb463b9eb23515ae644b2b5f30bf617bb7fb48e7543ad?apiKey=904907665fd04df7b56e80ff4b56e284&"
+          src="./asset/woman2.png"
           alt="Sustainable fashion representation"
           className="heroImage"
           loading="lazy"

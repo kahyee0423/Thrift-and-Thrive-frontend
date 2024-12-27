@@ -32,11 +32,11 @@ const Footer = () => {
         </div>
         <div className="footerSection">
           <h2 className="sectionTitle">STAY CONNECTED</h2>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/bd8c43c679d261668f836e58a1aeceb812564fd2872ac9e9834706d12483eada?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284"
-            alt="Social media icons"
-            className="socialIcons"
-          />
+          <div className="socialIcons">
+            <img src="./asset/fb.png" alt="Social media icons"/>
+            <img src="./asset/ig.png" alt="Social media icons" />
+            <img src="./asset/linkedin.png" alt="Social media icons" />
+            </div>
         </div>
       </nav>
     </footer>

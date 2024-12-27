@@ -22,7 +22,7 @@ const ProductTable = () => {
           <div className="product-header">
             <h2 className="product-title">Product list</h2>
             <button className="product-addButton" aria-label="Add new item">
-              <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/70342b8387beed1ea6b49d694c45cb29b780ace46d1bb734d6da17f6746e300f?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="" className="addIcon" />
+              <img src="./asset/add.png" alt="" className="addIcon" />
               <span>Add item</span>
             </button>
           </div>
@@ -54,7 +54,7 @@ const ProductTable = () => {
                 <span className="product-materials">{product.materials}</span>
                 <span className="product-actions">
                   <img
-                      src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/03f9995205d36eb7bd0fe4ed2f2c557c582a1f623568adca74df6fbd9db42759?apiKey=904907665fd04df7b56e80ff4b56e284&"
+                      src="./asset/action-button.png"
                       className="customer-actionIcon"
                       alt="Edit customer"
                       role="button"

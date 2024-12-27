@@ -19,7 +19,7 @@ const StorySection = () => {
           </p>
         </div>
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/6cb124b6df1fb74ea9e49e3748bbeccb6f2e4721b7a66db933ee0543be0ef363?apiKey=904907665fd04df7b56e80ff4b56e284&"
+          src="./asset/woman1.png"
           alt="Our journey in sustainable fashion"
           className="storyImage"
           loading="lazy"

@@ -7,7 +7,7 @@ const OrderSummary = () => {
       <h2 className="orderSummary-sectionTitle">Summary</h2>
       <div className="orderSummary-productItem">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/e2732a6fd59834681d260d9c81aa05c874bbc32f202138f7d5ca86710ca0a466?apiKey=904907665fd04df7b56e80ff4b56e284&"
+          src="./asset/blank-pic.png"
           alt="Product thumbnail"
           className="orderSummary-productImage"
         />

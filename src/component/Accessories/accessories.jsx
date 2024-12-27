@@ -56,7 +56,7 @@ const Accessories = () => {
 
       <div className="paginationWrapper">
         <div className="pagination">
-          <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/4f7e95dda55a307aca27925c6d27fd04317fe0e7d999525ef33bacc427211444?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="Previous page" className="paginationIcon" onClick={goToPreviousPage}/>
+          <img src="./asset/left-arrow.png" alt="Previous page" className="paginationIcon" onClick={goToPreviousPage}/>
           {pageNumbers.map((number) => (
                   <span
                     key={number}
@@ -66,7 +66,7 @@ const Accessories = () => {
                     {number}
                   </span>
               ))}
-          <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/5a0728a287c40c52aa4fff3691c1876efa4f8bfbc04804cbdae35788467475a4?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="Next page" className="paginationIcon" onClick={goToNextPage}/>
+          <img src="./asset/right-arrow.png" alt="Next page" className="paginationIcon" onClick={goToNextPage}/>
         </div>
         </div>
     </div>

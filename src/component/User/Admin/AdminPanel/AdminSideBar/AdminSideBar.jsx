@@ -13,7 +13,7 @@ const AdminSideBar = () => {
   return (
     <nav className="admin-sidebarNav" role="navigation" aria-label="Main navigation">
       <h1 className="admin-welcomeHeading">Welcome, Admin</h1>
-      <a href="/CustomerDetails" className="admin-navLink" aria-current="page">
+      <a href="/CustomerDetails" className="admin-navLink">
         Customer Details
       </a>
       <a href="/OrdersDetails" className="admin-navLink">

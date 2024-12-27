@@ -28,7 +28,7 @@ const Cart = () => {
                         <span>TOTAL</span>
                     </div>
 
-                    <CartItem image="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/9825dfe5adfdcb695865e8db8da471f9e1f506c089223cf18e741b30f939dea5?apiKey=904907665fd04df7b56e80ff4b56e284&" price="150" />
+                    <CartItem image="./asset/blank-pic.png" price="150" />
 
                     <div className="cartSummary">
                         <div className="totalRow">

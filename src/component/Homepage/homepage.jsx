@@ -33,11 +33,11 @@ const Homepage = () => {
 
       <section className="about">
         <div className="aboutImageWrapper">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e35c4fede807d17d38d3f27d8a568aa2913219a92570d6bdb73622329ad0a1d8?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="aboutImage" />
+          <img src="./asset/clothes-back.png" alt="" className="aboutImage" />
           <button className="aboutButton" onClick={goToAbout}>About Us</button>
         </div>
         <div className="aboutContent">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a7923dd04aa2cfbe7a50989f902bca14d32f6a25f277b4a1443d7103f9038b7?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" alt="" className="decorativeImage" />
+          <img src="./asset/big.png" alt="" className="decorativeImage" />
           <h2 className="aboutTitle">Welcome to Thrift & Thrive!</h2>
           <p className="aboutText">
             We bring you high-quality, stylish pre-loved clothing that's ethically sourced and sustainably curated.

@@ -33,7 +33,7 @@ const CustomerTable = () => {
                   <td className="customer-tableCell">{customer.contactNumber}</td>
                   <td className="customer-tableCell">
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/03f9995205d36eb7bd0fe4ed2f2c557c582a1f623568adca74df6fbd9db42759?apiKey=904907665fd04df7b56e80ff4b56e284&"
+                      src="./asset/action-button.png"
                       className="customer-actionIcon"
                       alt="Edit customer"
                       role="button"

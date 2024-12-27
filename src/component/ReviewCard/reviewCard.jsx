@@ -10,7 +10,7 @@ const reviewCard = ({ rating, review, author }) => {
           {stars.map((_, index) => (
             <img 
               key={index}
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3fc4e36b43285dfd90ea72f93d96b821206634db00e5a5cc61e369bad441939?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284" 
+              src="./asset/star-pic.png" 
               alt="" 
               className="star"
             />

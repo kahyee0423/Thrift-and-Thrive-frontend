@@ -32,7 +32,7 @@ export const FAQContent = () => {
               >
                 <h3 className="question">{faq.question}</h3>
                 <span className="icon" aria-hidden="true">
-                  {expandedId === faq.id ? '−' : '+'}
+                  {expandedId === faq.id ? '-' : '+'}
                 </span>
               </button>
               <div

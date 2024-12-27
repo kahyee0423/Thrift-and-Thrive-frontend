@@ -1,4 +1,4 @@
-export const PRODUCTS = [
+export const PRODUCTS = [ //homepage show de "new style added daily"
   {
     image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1b9f30d03a8c4ffad86a7ccc1c43df50d9de4149568c0d1e19afad14d02b6721?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284',
     title: 'Text',
@@ -25,7 +25,7 @@ export const PRODUCTS = [
    },
 ];
 
-export const SHOP_PRODUCTS = [
+export const SHOP_PRODUCTS = [ //in each categories page de
   {
     image: "./asset/delivery.png",
     title: "Product Title 1",
@@ -56,7 +56,7 @@ export const SHOP_PRODUCTS = [
     },
 ];
 
-export const REVIEWS = [
+export const REVIEWS = [ //homepage de reviews
   {
     rating: 5,
     review: 'I do enjoy my online shopping experience at Thrift & Thrive a lot. Staff will email me when they notice defects that did not mention on the website before they shipped to me. I do appreciate this extra effort a lot. Plus, the refunds process is super quick as well. Highly recommend!',
@@ -84,7 +84,7 @@ export const REVIEWS = [
   },
 ];
 
-export const FEATURES = [
+export const FEATURES = [ //homepage de 5 features
   { image: `${process.env.PUBLIC_URL}/asset/quality.png`, title: 'Quality Assured', description: 'Get your items delivered quickly.' },
   { image: `${process.env.PUBLIC_URL}/asset/eco-friendly.png`, title: 'Eco-friendly', description: 'Your payments are safe with us.' },
   { image: `${process.env.PUBLIC_URL}/asset/star.png`, title: 'Loved by Customer', description: 'We offer support anytime, anywhere.' },
@@ -92,7 +92,7 @@ export const FEATURES = [
   { image: `${process.env.PUBLIC_URL}/asset/easy_return.png`, title: 'Easy Returns', description:''}
 ];
 
-export const feature = [
+export const feature = [ //about us de 3 features
   {
     title: 'EASY AND CONVENIENT',
     description: 'Clear out your wardrobe effortlessly! Drop off your pre-loved clothing at our collection points, and we will review them within a few working days.'
@@ -107,7 +107,7 @@ export const feature = [
   }
 ];
 
-export const faqData = [
+export const faqData = [ 
   {
     id: 1,
     question: "What is Thrift and Thrive?",
@@ -462,178 +462,3 @@ export const RETURNPOLICY = [
     ]
   },
 ];
-
-export const productDetails = {
-  id: 'brown-regular-fit-top',
-  name: 'Brown Regular Fit Top',
-  price: 20.00,
-  currency: 'RM',
-  condition: 'Like New',
-  images: {
-      primary: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/048bdf5fc2213e727373d1cbeca7cc74d60c02d37abb796e43dd2d1aaa768179?apiKey=904907665fd04df7b56e80ff4b56e284&',
-      gallery: [
-      '/images/brown-top-1.jpg',
-      '/images/brown-top-2.jpg',
-      '/images/brown-top-3.jpg',
-      '/images/brown-top-4.jpg'
-      ]
-  },
-  sizeMeasurements: {
-      chest: '38 inches',
-      length: '26 inches',
-      shoulders: '16 inches',
-      sleeves: '24 inches',
-      fit: 'Regular Fit'
-  },
-  materials: {
-      main: '95% Cotton',
-      secondary: '5% Elastane',
-      care: ['Machine wash cold', 'Do not bleach', 'Tumble dry low']
-  },
-  shippingInfo: {
-      methods: [
-      {
-          name: 'Standard Shipping',
-          price: 5.00,
-          duration: '3-5 business days'
-      },
-      {
-          name: 'Express Shipping',
-          price: 10.00,
-          duration: '1-2 business days'
-      }
-      ],
-      returns: {
-      window: '30 days',
-      condition: 'Unworn with original tags',
-      refund: 'Full refund minus shipping'
-      }
-  },
-  relatedProducts: [
-      {
-      id: 'beige-blouse',
-      name: 'Beige Silk Blouse',
-      price: 25.00,
-      image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/5780b6249a0218a8780889c574df664a68873a47c3037343d838799a0964e584?apiKey=904907665fd04df7b56e80ff4b56e284&',
-      condition: 'Excellent',
-      category: 'women'
-      },
-      {
-      id: 'navy-sweater',
-      name: 'Navy Wool Sweater',
-      price: 30.00,
-      image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/4b79a265d2f6bf9b98596a91a1ca172115912475b9ab067538267631d3b7f593?apiKey=904907665fd04df7b56e80ff4b56e284&',
-      condition: 'Very Good',
-      category: 'men'
-      },
-      {
-      id: 'white-tshirt',
-      name: 'White Cotton T-Shirt',
-      price: 15.00,
-      image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/0e7933c47e79756e3df4eb5a73a93f074b29e64b3c65b4d120bf5b099f01d505?apiKey=904907665fd04df7b56e80ff4b56e284&',
-      condition: 'Like New',
-      category: 'men'
-      },
-      {
-      id: 'black-cardigan',
-      name: 'Black Knit Cardigan',
-      price: 35.00,
-      image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/4604b847590c9d288f786b0774763aa3d4368c7b91d504424f5bb70eb329f94c?apiKey=904907665fd04df7b56e80ff4b56e284&',
-      condition: 'New with Tags',
-      category: 'women'
-      }
-  ]
-  };
-  
-  export const reviews = [
-  {
-      id: 1,
-      user: 'Sarah M.',
-      rating: 5,
-      date: '2024-01-15',
-      title: 'Perfect fit and great quality',
-      comment: 'The top looks exactly like the pictures and fits true to size. Material feels premium.',
-      verified: true
-  },
-  {
-      id: 2,
-      user: 'Michael R.',
-      rating: 4,
-      date: '2024-01-10',
-      title: 'Good value for money',
-      comment: 'Nice casual top, comfortable material. Shipping was quick.',
-      verified: true
-  },
-  {
-      id: 3,
-      user: 'Emma L.',
-      rating: 5,
-      date: '2024-01-05',
-      title: 'Excellent condition',
-      comment: 'Cannot believe this is second-hand. Looks brand new!',
-      verified: true
-  }
-  ];
-  
-  export const sizes = ['XS', 'S', 'M', 'L', 'XL'];
-  
-  export const colors = [
-  {
-      name: 'Brown',
-      hex: '#8B4513',
-      inStock: true
-  },
-  {
-      name: 'Beige',
-      hex: '#F5F5DC',
-      inStock: false
-  },
-  {
-      name: 'Navy',
-      hex: '#000080',
-      inStock: true
-  }
-  ];
-  
-  export const mockProducts = [
-    {
-      id: 1,
-      title: productDetails.name,
-      description: 'A great top!',
-      image: productDetails.images.primary,
-      price: productDetails.price,
-      category: 'women'
-    },
-     {
-        id: 2,
-        title: 'Beige Silk Blouse',
-         description: 'A great blouse!',
-        image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/5780b6249a0218a8780889c574df664a68873a47c3037343d838799a0964e584?apiKey=904907665fd04df7b56e80ff4b56e284&',
-        price: 25.00,
-        category: 'women'
-      },
-       {
-         id: 3,
-         title: 'Navy Wool Sweater',
-          description: 'A great sweater!',
-         image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/4b79a265d2f6bf9b98596a91a1ca172115912475b9ab067538267631d3b7f593?apiKey=904907665fd04df7b56e80ff4b56e284&',
-         price: 30.00,
-         category: 'men'
-       },
-       {
-         id: 4,
-         title: 'White Cotton T-Shirt',
-         description: 'A great tshirt!',
-         image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/0e7933c47e79756e3df4eb5a73a93f074b29e64b3c65b4d120bf5b099f01d505?apiKey=904907665fd04df7b56e80ff4b56e284&',
-         price: 15.00,
-         category: 'men'
-       },
-      {
-         id: 5,
-        title: 'Black Knit Cardigan',
-        description: 'A great cardigan!',
-         image: 'https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/4604b847590c9d288f786b0774763aa3d4368c7b91d504424f5bb70eb329f94c?apiKey=904907665fd04df7b56e80ff4b56e284&',
-        price: 35.00,
-          category: 'women'
-       }
-  ];

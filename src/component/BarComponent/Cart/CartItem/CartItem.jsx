@@ -17,7 +17,7 @@ const CartItem = ({ image, price }) => {
             <div className="controls">
                 <span className="currency">RM</span>
                 <button className="removeButton" aria-label="Remove item">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/904907665fd04df7b56e80ff4b56e284/125c54f4849665880e301c27a99bea93c08f68d61b723d7d5d5a5c148c7cca80?apiKey=904907665fd04df7b56e80ff4b56e284&" alt="" className="removeIcon" />
+                    <img src="./asset/dustbin.png" alt="" className="removeIcon" />
                 </button>
             </div>
         </article>
