@@ -1,10 +1,9 @@
 import React from 'react';
 import './Cart.css';
-import NavigationBar from '../NavigationBar/NavigationBar';
-import Footer from '../Footer/footer';
 import CartItem from './CartItem/CartItem';
-import Checkout from './Checkout/Checkout';
 import { useNavigate } from 'react-router-dom';
+import NavigationBar from '../../NavigationBar/NavigationBar';
+import Footer from '../../Footer/footer';
 
 const Cart = () => {
     const navigate = useNavigate();

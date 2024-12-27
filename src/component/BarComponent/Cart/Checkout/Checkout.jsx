@@ -4,8 +4,8 @@ import ContactForm from './ContactForm/ContactForm';
 import OrderSummary from './OrderSummary/OrderSummary';
 import Delivery from './Delivery/Delivery';
 import Payment from './Payment/Payment';
-import NavigationBar from '../../NavigationBar/NavigationBar';
-import Footer from '../../Footer/footer';
+import Footer from '../../../Footer/footer';
+import NavigationBar from '../../../NavigationBar/NavigationBar';
 
 const Checkout = () => {
     return (

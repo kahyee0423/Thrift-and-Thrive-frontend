@@ -15,9 +15,9 @@ import ReturnPolicy from './component/ReturnPolicy/ReturnPolicy';
 import AdminLogin from './component/User/Admin/AdminLogin';
 import UserLogin from './component/User/Login/UserLogin';
 import UserSignUp from './component/User/SignUp/UserSignUp';
-import Cart from './component/Cart/Cart';
+import Cart from './component/BarComponent/Cart/Cart';
 import Account from './component/User/Account/Account';
-import Checkout from './component/Cart/Checkout/Checkout';
+import Checkout from './component/BarComponent/Cart/Checkout/Checkout';
 
 const App = () => {
   return (
