@@ -24,7 +24,7 @@ const Cart = () => {
                 <section className="cartSection">
                     <div className="cartHeader">
                         <span>PRODUCT</span>
-                        <span>QUANTITY</span> {/* Added QUANTITY Column Header*/}
+                        <span>QUANTITY</span> 
                         <span>TOTAL</span>
                     </div>
 

@@ -2,8 +2,15 @@ import React from 'react'
 import './AdminLogin.css'
 import Footer from '../../Footer/footer'
 import NavigationBar from '../../NavigationBar/NavigationBar'
+import { useNavigate } from 'react-router-dom'
 
 const AdminLogin = () => {
+
+  const navigate = useNavigate();
+  const goToAdminPanel = () => {
+    navigate('/AdminPanel');
+  }
+
   return (
     <div className="pageContainer">
     <NavigationBar />
@@ -33,7 +40,7 @@ const AdminLogin = () => {
               aria-required="true"
             />
           </div>
-          <button type="submit" className="admin-submitButton">Sign in</button>
+          <button type="submit" className="admin-submitButton" onClick={goToAdminPanel}>Sign in</button>
           </form>
     </main>
     <Footer />

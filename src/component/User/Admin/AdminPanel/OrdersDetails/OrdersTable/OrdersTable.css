@@ -1,0 +1,72 @@
+.orderSection {
+    display: flex;
+    margin-top: 48px;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    color: #000;
+  }
+  
+  .order-sectionTitle {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+  }
+  
+  .order-customerTable {
+    background-color: rgba(217, 217, 217, 0.4);
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+  
+  .order-tableHeader {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    background-color: rgba(217, 217, 217, 0.6);
+  }
+  
+  .order-tableCell {
+    padding: 16px 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1); /* Add right border */
+  }
+  
+  .order-tableCell:last-child {
+    border-right: none;
+  }
+  
+  .order-actionButton {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .order-actionButton:hover,
+  .order-actionButton:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-actionIcon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 991px) {
+    .orderSection {
+      max-width: 100%;
+      margin-top: 40px;
+      overflow-x: auto;
+    }
+  
+    .order-customerTable {
+      min-width: 600px;
+    }
+  }

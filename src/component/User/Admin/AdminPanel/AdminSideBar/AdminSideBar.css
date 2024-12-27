@@ -1,0 +1,78 @@
+.admin-sidebarNav {
+    background-color: rgb(2, 120, 170);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 48px 21px;
+    font-family: Roboto, sans-serif;
+    border: 1px solid #000;
+  }
+  
+  .admin-welcomeHeading {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 400;
+    align-self: center;
+    margin: 0 0 71px 0;
+    font-style: italic;
+  }
+  
+  .admin-navLink {
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.4);
+    border-bottom: 1px solid #000;
+    margin-top: 23px;
+    min-height: 70px;
+    padding: 20px;
+    display: flex;       
+    align-items: center;  
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.2s;
+  }
+  
+  .admin-navLink:hover,
+  .admin-navLink:focus {
+    background-color: rgba(217, 217, 217, 0.6);
+    outline: 2px solid #fff;
+  }
+  
+  .admin-navLink[aria-current="page"] {
+    background-color: rgba(217, 217, 217, 0.7);
+  }
+  
+  .admin-signOutButton {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    align-self: center;
+    margin-top: 538px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: opacity 0.2s;
+    font-style: italic;
+  }
+  
+  .admin-signOutButton:hover,
+  .admin-signOutButton:focus {
+    opacity: 0.8;
+    outline: 2px solid #fff;
+  }
+  
+  @media (max-width: 991px) {
+    .admin-sidebarNav {
+      margin-top: 34px;
+      padding: 24px 20px;
+    }
+  
+    .admin-signOutButton {
+      margin-top: 40px;
+    }
+  }

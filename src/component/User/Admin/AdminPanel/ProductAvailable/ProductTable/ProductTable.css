@@ -1,0 +1,103 @@
+.product-productListContainer {
+    width: 110%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: -6rem;
+  }
+  
+  .product-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+  }
+  
+  .product-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #000;
+  }
+  
+  .product-addButton {
+    border-radius: 10px;
+    background-color: rgb(192, 236, 246);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    gap: 16px;
+    padding: 6px 16px;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .product-addIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .product-productGrid {
+    background-color: rgba(217, 217, 217, 0.4);
+    margin-top: 14px;
+    padding: 12px 24px;
+    border: 1px solid #000;
+  }
+  
+  .product-gridHeader {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr 1fr 1fr 2fr 2fr 1fr;
+    gap: 20px;
+    font: 500 16px Roboto, sans-serif;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-gridHeader > * {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-gridHeader > *:last-child {
+      border-right: none;
+  }
+  
+  .product-productItem {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr 1fr 1fr 2fr 2fr 1fr;
+    gap: 20px;
+    font: 400 13px Roboto, sans-serif;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  
+  .product-productItem > * {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .product-productItem > *:last-child {
+      border-right: none;
+  }
+  
+  .product-measurements {
+    font-size: 11px;
+    line-height: 26px;
+    letter-spacing: 0.1px;
+  }
+  
+  
+  @media (max-width: 991px) {
+    .product-productListContainer {
+      margin-top: 40px;
+    }
+    .product-gridHeader,
+    .product-productItem {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }

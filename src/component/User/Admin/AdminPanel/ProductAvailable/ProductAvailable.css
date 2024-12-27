@@ -1,0 +1,38 @@
+.product-adminLayout {
+    background-color: #fff;
+    padding: 32px;
+    overflow: hidden;
+  }
+  
+  .product-container {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .product-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+  }
+  
+  .product-mainContent {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .product-adminLayout {
+      padding: 20px;
+    }
+    .product-container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .product-sidebar, .product-mainContent {
+      width: 100%;
+      margin-left: 0;
+    }
+  }

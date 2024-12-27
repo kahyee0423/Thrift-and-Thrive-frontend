@@ -18,6 +18,10 @@ import UserSignUp from './component/User/SignUp/UserSignUp';
 import Cart from './component/BarComponent/Cart/Cart';
 import Account from './component/User/Account/Account';
 import Checkout from './component/BarComponent/Cart/Checkout/Checkout';
+import AdminMainPage from './component/User/Admin/AdminPanel/AdminMainPage/AdminMainPage';
+import CustomerDetails from './component/User/Admin/AdminPanel/CustomerDetails/CustomerDetails';
+import OrdersDetails from './component/User/Admin/AdminPanel/OrdersDetails/OrdersDetails';
+import ProductAvailable from './component/User/Admin/AdminPanel/ProductAvailable/ProductAvailable';
 
 const App = () => {
   return (
@@ -39,6 +43,10 @@ const App = () => {
       <Route path="/Cart" element={<Cart />} />
       <Route path="/Account" element={<Account />} />
       <Route path="/Checkout" element={<Checkout />} />
+      <Route path="/AdminPanel" element={<AdminMainPage />} />
+      <Route path="/CustomerDetails" element={<CustomerDetails />} />
+      <Route path="/OrdersDetails" element={<OrdersDetails />} />
+      <Route path="/ProductAvailable" element={<ProductAvailable />} />
     </Routes>
   );
 };
