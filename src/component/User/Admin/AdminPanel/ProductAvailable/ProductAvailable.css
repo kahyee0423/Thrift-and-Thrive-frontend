@@ -2,6 +2,7 @@
     background-color: #fff;
     padding: 32px;
     overflow: hidden;
+    user-select: none;
   }
   
   .product-container {

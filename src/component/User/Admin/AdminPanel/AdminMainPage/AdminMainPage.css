@@ -3,6 +3,7 @@
     padding: 0 32px;
     overflow: hidden;
     min-height: 100vh;
+    user-select: none;
   }
   
   .mainpage-contentWrapper {
