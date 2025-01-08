@@ -1,33 +1,62 @@
-import React from 'react';
-import './productList.css'
-import ProductCard from '../ProductCard/productCard';
-import { SHOP_PRODUCTS } from '../../utils/data';
+import React, { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+import './productList.css';
 
 const ProductList = ({ category, currentPage, productsPerPage }) => {
-    
-    const filteredProducts = SHOP_PRODUCTS.filter(product => {
-        return product.category === category;
-    });
-    console.log("Filtered Products:", filteredProducts);
-    
-    const startIndex = (currentPage - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
-    const displayedProducts = filteredProducts.slice(startIndex, endIndex);
-    console.log("Displayed Products:", displayedProducts)
-    
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        loadProducts();
+    }, [category, currentPage, productsPerPage]);
+
+    const loadProducts = async () => {
+        try {
+            setLoading(true);
+            const data = await api.getProducts(category, currentPage, productsPerPage);
+            setProducts(data);
+        } catch (err) {
+            setError('Failed to load products');
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleAddToCart = async (productId) => {
+        try {
+            console.log('Adding product to cart:', productId); // Debug log
+            const userId = 1; // Using default user for testing
+            const response = await api.addToCart(userId, productId, 1);
+            console.log('Cart response:', response); // Debug log
+            alert('Product added to cart!');
+        } catch (err) {
+            console.error('Error details:', err); // Debug log
+            alert(`Failed to add product to cart: ${err.message}`);
+        }
+    };
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+
     return (
-    <section aria-label="Product Listings">
-        {displayedProducts.map((product, index) => (
-        <ProductCard
-            key={index}
-            image={product.image}
-            title={product.title}
-            price={product.price}
-            description={product.description}
-            id={index + 1} 
-        />
-        ))}
-    </section>
+        <div className="productsGrid">
+            {products.map(product => (
+                <div key={product.id} className="productCard">
+                    <img src={product.image} alt={product.name} />
+                    <h3>{product.name}</h3>
+                    <p>{product.description}</p>
+                    <p>RM {product.price}</p>
+                    <button 
+                        className="addToCartButton"
+                        onClick={() => handleAddToCart(product.id)}
+                    >
+                        Add to Cart
+                    </button>
+                </div>
+            ))}
+        </div>
     );
 };
 

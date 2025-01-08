@@ -1,117 +1,141 @@
 .cartPage {
-    background: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    user-select: none;
-  }
-  
-  .mainContent {
-    flex: 1;
-    padding: 0 20px;
-    }
-    
-    .CartpageTitle {
-    color: #000;
-    font: Roboto, sans-serif;
-    letter-spacing: 0.25px;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 600;
-    margin:0;
-    margin-top: -1rem;
-    }
-    
-    .cartSection {
-    width: 250%;
-    margin: 0;
-    }
-  
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 0 20px;
+  max-width: 1200px; /* Add max-width */
+  margin: 0 auto; /* Center the content */
+  width: 100%; /* Control the width */
+}
+
+.CartpageTitle {
+  color: #000;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.25px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 2rem 0; /* Adjust margin */
+}
+
+.cartSection {
+  width: 100%; /* Change from 250% to 100% */
+  margin: 0 auto; /* Center the section */
+  padding: 0 20px; /* Add padding */
+}
+
 .cartHeader {
-    display: flex;
-    justify-content: space-between;
-    font: 400 20px/1 Roboto, sans-serif;
-    letter-spacing: 0.25px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 15px;
-    padding-top: 25px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Use grid for better alignment */
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #000;
+  padding: 15px 0;
 }
-  
+
 .cartSummary {
-    margin-top: 79px;
-    border-top: 1px solid #000;
-    padding-top: 52px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-left: 0;
-    padding-right: 0;
+  margin-top: 40px;
+  border-top: 1px solid #000;
+  padding-top: 30px;
+  width: 100%;
 }
-  
+
 .totalRow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font: 400 20px/1 Roboto, sans-serif;
-      margin-bottom: 46px;
-      width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 0 20px;
 }
-  
+
 .taxNote {
-    font-size: 16px;
-      margin-bottom: 53px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: right;
+  padding: 0 20px;
 }
-  
+
 .cart-actionButtons {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 300px; /* Limit button width */
+  margin-left: auto; /* Align buttons to right */
 }
-  
-.checkoutButton {
-    border-radius: 20px;
-    background: #9DC3FF;
-    padding: 21px 70px;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-  
+
+.checkoutButton,
 .continueButton {
-    border-radius: 20px;
-    background: #D9D9D9;
-    padding: 19px 64px;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 30px;
-    width: 100%;
+  border-radius: 20px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 15px 30px;
+  transition: opacity 0.2s;
 }
-  
-@media (max-width: 991px) {
-    
-    .CartpageTitle {
-      font-size: 30px;
-      margin: 20px 0;
-    }
-    
-    .cartSummary {
-        margin-top: 40px;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .cartHeader {
-          padding-left: 0;
-        padding-right: 0;
-      }
-    
-    .checkoutButton,
-    .continueButton {
-      min-width: auto;
-      width: 100%;
-      padding: 15px 20px;
-    }
+
+.checkoutButton {
+  background: #9DC3FF;
+}
+
+.checkoutButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.continueButton {
+  background: #D9D9D9;
+}
+
+.emptyCart {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mainContent {
+      padding: 0 10px;
   }
+
+  .CartpageTitle {
+      font-size: 30px;
+      margin: 1rem 0;
+  }
+
+  .cartHeader {
+      font-size: 16px;
+  }
+
+  .cartSection {
+      padding: 0 10px;
+  }
+
+  .cart-actionButtons {
+      max-width: 100%;
+  }
+
+  .checkoutButton,
+  .continueButton {
+      font-size: 18px;
+      padding: 12px 20px;
+  }
+}
+
+/* Add hover effects */
+.checkoutButton:hover:not(:disabled),
+.continueButton:hover {
+  opacity: 0.9;
+}
