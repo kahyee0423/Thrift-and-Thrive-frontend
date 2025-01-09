@@ -1,52 +1,84 @@
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+
+const defaultOptions = {
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    mode: 'cors'
+};
 
 export const api = {
-    // Product APIs
-    getProducts: async (category, page = 1, limit = 12) => {
+    // Product endpoints
+    async getAllProducts(category, page = 1, limit = 12) {
         try {
-            const response = await fetch(
-                `${API_BASE_URL}/products?category=${category}&page=${page}&limit=${limit}`
-            );
-            if (!response.ok) throw new Error('Failed to fetch products');
-            return await response.json();
+            const queryParams = new URLSearchParams({
+                ...(category && { category }),
+                page: page.toString(),
+                limit: limit.toString()
+            });
+            
+            const url = `${API_BASE_URL}/products?${queryParams}`;
+            console.log('Fetching products from:', url);
+            
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            
+            console.log('Response status:', response.status);
+            const data = await response.json();
+            console.log('Response data:', data);
+            
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to fetch products');
+            }
+            
+            return data;
         } catch (error) {
             console.error('Error fetching products:', error);
             throw error;
         }
     },
 
-    // Cart APIs
-    getCart: async (userId) => {
+    async getProduct(id) {
+        const response = await fetch(`${API_BASE_URL}/products?id=${id}`);
+        return await response.json();
+    },
+
+    // Cart endpoints
+    async getCart(userId) {
         try {
-        const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch cart');
+            if (!userId) {
+                return { items: [], total: 0 };
             }
-        const data = await response.json();
-            console.log('Cart data received:', data); // Debug log
-            return data;
+            const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}`, {
+                ...defaultOptions,
+                method: 'GET'
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
         } catch (error) {
             console.error('Error fetching cart:', error);
             throw error;
         }
     },
 
-
-    addToCart: async (userId, productId, quantity) => {
+    async addToCart(userId, productId, quantity) {
         try {
-        const response = await fetch(`${API_BASE_URL}/cart`, {
+            const response = await fetch(`${API_BASE_URL}/cart`, {
+                ...defaultOptions,
                 method: 'POST',
-                        headers: {
-                    'Content-Type': 'application/json',
-                },
                 body: JSON.stringify({ userId, productId, quantity })
             });
-
+            
             if (!response.ok) {
-            const errorData = await response.json();
-                throw new Error(errorData.error || 'Failed to add to cart');
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-
             return await response.json();
         } catch (error) {
             console.error('Error adding to cart:', error);
@@ -54,37 +86,20 @@ export const api = {
         }
     },
 
-    updateCartItem: async (userId, productId, quantity) => {
-        try {
-            const response = await fetch(`${API_BASE_URL}/cart/update`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ userId, productId, quantity })
-            });
-            if (!response.ok) throw new Error('Failed to update cart');
-            return await response.json();
-        } catch (error) {
-            console.error('Error updating cart:', error);
-            throw error;
-        }
+    // Order endpoints
+    async createOrder(userId) {
+        const response = await fetch(`${API_BASE_URL}/orders`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId }),
+        });
+        return await response.json();
     },
 
-    removeFromCart: async (userId, productId) => {
-        try {
-            const response = await fetch(`${API_BASE_URL}/cart/remove`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ userId, productId })
-            });
-            if (!response.ok) throw new Error('Failed to remove item from cart');
-            return await response.json();
-        } catch (error) {
-            console.error('Error removing from cart:', error);
-            throw error;
-        }
+    async getUserOrders(userId) {
+        const response = await fetch(`${API_BASE_URL}/orders?userId=${userId}`);
+        return await response.json();
     }
-};
+}; 
