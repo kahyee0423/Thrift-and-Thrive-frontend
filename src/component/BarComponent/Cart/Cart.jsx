@@ -8,15 +8,6 @@ import Footer from '../../Footer/footer';
 
 const Cart = () => {
     const navigate = useNavigate();
-
-    const goToCheckout =()=>{
-        navigate('/Checkout');
-    }
-    
-    const goToHomePage =()=>{
-        navigate('/');
-    }
-
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -29,12 +20,20 @@ const Cart = () => {
     const loadCart = async () => {
         try {
             setLoading(true);
-            // Using userId 1 for testing
             const data = await api.getCart(1);
-            console.log('Loaded cart data:', data); // Debug log
-            
+            console.log('Loaded cart data:', data);
+
             if (data && data.items) {
-                setCartItems(data.items);
+                // Transform the items to match CartItem component expectations
+                const transformedItems = data.items.map(item => ({
+                    productId: item.productId,
+                    quantity: item.quantity,
+                    price: item.price,
+                    productName: item.productName,
+                    imageUrl: item.imageUrl
+                }));
+                console.log('Transformed items:', transformedItems);
+                setCartItems(transformedItems);
                 setTotal(data.total);
             } else {
                 setCartItems([]);
@@ -51,8 +50,8 @@ const Cart = () => {
 
     const updateQuantity = async (productId, newQuantity) => {
         try {
-            await api.addToCart(1, productId, newQuantity);
-            await loadCart(); // Reload cart after update
+            await api.updateCartItem(1, productId, newQuantity);
+            await loadCart();
         } catch (err) {
             setError('Failed to update quantity');
             console.error(err);
@@ -61,8 +60,8 @@ const Cart = () => {
 
     const removeItem = async (productId) => {
         try {
-            await api.addToCart(1, productId, 0); // Set quantity to 0 to remove
-            await loadCart(); // Reload cart after removal
+            await api.removeFromCart(1, productId);
+            await loadCart();
         } catch (err) {
             setError('Failed to remove item');
             console.error(err);
@@ -92,8 +91,8 @@ const Cart = () => {
                     ) : (
                         cartItems.map(item => (
                             <CartItem 
-                                key={item.id}
-                                {...item}
+                                key={item.productId}
+                                item={item} // Pass the entire item object
                                 onUpdateQuantity={(quantity) => 
                                     updateQuantity(item.productId, quantity)}
                                 onRemove={() => removeItem(item.productId)}
@@ -114,12 +113,15 @@ const Cart = () => {
                         <div className="cart-actionButtons">
                             <button 
                                 className="checkoutButton" 
-                                onClick={goToCheckout}
+                                onClick={() => navigate('/Checkout')}
                                 disabled={cartItems.length === 0}
                             >
                                 Check out
                             </button>
-                            <button className="continueButton" onClick={goToHomePage}>
+                            <button 
+                                className="continueButton" 
+                                onClick={() => navigate('/')}
+                            >
                                 Continue shopping
                             </button>
                         </div>

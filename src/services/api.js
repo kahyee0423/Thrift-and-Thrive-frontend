@@ -50,40 +50,32 @@ export const api = {
     // Cart endpoints
     async getCart(userId) {
         try {
-            if (!userId) {
-                return { items: [], total: 0 };
-            }
-            const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}`, {
-                ...defaultOptions,
-                method: 'GET'
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
+            const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}`);
+            const data = await response.json();
+            console.log('Cart data from API:', data); // Debug log
+            return data;
         } catch (error) {
             console.error('Error fetching cart:', error);
             throw error;
         }
     },
 
-    async addToCart(userId, productId, quantity) {
-        try {
-            const response = await fetch(`${API_BASE_URL}/cart`, {
-                ...defaultOptions,
-                method: 'POST',
-                body: JSON.stringify({ userId, productId, quantity })
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error adding to cart:', error);
-            throw error;
-        }
+    async updateCartItem(userId, productId, quantity) {
+        const response = await fetch(`${API_BASE_URL}/cart`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId, productId, quantity })
+        });
+        return await response.json();
+    },
+
+    async removeFromCart(userId, productId) {
+        const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}&productId=${productId}`, {
+            method: 'DELETE'
+        });
+        return await response.json();
     },
 
     // Order endpoints
