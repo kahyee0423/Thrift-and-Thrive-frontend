@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 import './productList.css';
 
+// Simple placeholder URL - a gray background with text
+const PLACEHOLDER_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect width="100%25" height="100%25" fill="%23eee"/%3E%3Ctext x="50%25" y="50%25" font-family="Arial" font-size="20" fill="%23aaa" text-anchor="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+
 const ProductList = ({ category, currentPage, productsPerPage }) => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const [cartQuantities, setCartQuantities] = useState({});
 
+    // Fetch products and cart data
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -17,7 +21,7 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
                 // Fetch products
                 const productsData = await api.getAllProducts(category, currentPage, productsPerPage);
                 setProducts(Array.isArray(productsData) ? productsData : []);
-
+                
                 // Fetch cart to get current quantities
                 const userId = 1; // Replace with actual user ID
                 const cartData = await api.getCart(userId);
@@ -30,7 +34,7 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
                     });
                 }
                 setCartQuantities(quantities);
-
+                
             } catch (err) {
                 console.error('Error fetching data:', err);
                 setError(err.message || 'Failed to load data');
@@ -48,8 +52,8 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
             const currentQuantity = cartQuantities[productId] || 0;
             const newQuantity = currentQuantity + 1;
             
-            // Update cart in backend
-            await api.addToCart(userId, productId, newQuantity);
+            // Use updateCartItem instead of addToCart
+            await api.updateCartItem(userId, productId, newQuantity);
             
             // Fetch updated cart to ensure sync with backend
             const updatedCart = await api.getCart(userId);

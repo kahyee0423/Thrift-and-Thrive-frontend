@@ -72,10 +72,28 @@ export const api = {
     },
 
     async removeFromCart(userId, productId) {
-        const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}&productId=${productId}`, {
-            method: 'DELETE'
-        });
-        return await response.json();
+        try {
+            const response = await fetch(
+                `${API_BASE_URL}/cart?userId=${userId}&productId=${productId}`,
+                {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error('Failed to remove item from cart');
+            }
+
+            const data = await response.json();
+            console.log('Remove from cart response:', data);
+            return data;
+        } catch (error) {
+            console.error('Error removing from cart:', error);
+            throw error;
+        }
     },
 
     async addToCart(userId, productId, quantity) {
