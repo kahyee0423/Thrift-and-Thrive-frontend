@@ -5,7 +5,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 150%;
     margin-left: -10rem;
-    height: 400%;
+    height: auto;
   }
   
   .orderSummary-sectionTitle {
