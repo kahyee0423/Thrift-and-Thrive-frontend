@@ -24,14 +24,15 @@ const Cart = () => {
             console.log('Loaded cart data:', data);
 
             if (data && data.items) {
-                // Transform the items to match CartItem component expectations
-                const transformedItems = data.items.map(item => ({
-                    productId: item.productId,
-                    quantity: item.quantity,
-                    price: item.price,
-                    productName: item.productName,
-                    imageUrl: item.imageUrl
-                }));
+                const transformedItems = data.items
+                    .filter(item => item.quantity > 0)
+                    .map(item => ({
+                        productId: item.productId,
+                        quantity: item.quantity,
+                        price: item.price,
+                        productName: item.productName,
+                        imageUrl: item.imageUrl
+                    }));
                 console.log('Transformed items:', transformedItems);
                 setCartItems(transformedItems);
                 setTotal(data.total);
@@ -48,23 +49,51 @@ const Cart = () => {
         }
     };
 
-    const updateQuantity = async (productId, newQuantity) => {
+    const removeItem = async (productId) => {
         try {
-            await api.updateCartItem(1, productId, newQuantity);
-            await loadCart();
+            const userId = 1;
+            console.log('Removing item:', productId);
+            
+            // First set quantity to 0
+            await api.updateCartItem(userId, productId, 0);
+            
+            // Then remove from backend
+            await api.removeFromCart(userId, productId);
+            
+            // Update UI immediately
+            setCartItems(prevItems => {
+                const updatedItems = prevItems.filter(item => item.productId !== productId);
+                console.log('Updated cart items:', updatedItems);
+                return updatedItems;
+            });
+            
+            // Update total
+            setTotal(prevTotal => {
+                const removedItem = cartItems.find(item => item.productId === productId);
+                return removedItem ? prevTotal - (removedItem.price * removedItem.quantity) : prevTotal;
+            });
+
         } catch (err) {
-            setError('Failed to update quantity');
-            console.error(err);
+            console.error('Error removing item:', err);
+            setError('Failed to remove item');
+            // Reload cart in case of error
+            await loadCart();
         }
     };
 
-    const removeItem = async (productId) => {
+    const updateQuantity = async (productId, newQuantity) => {
         try {
-            await api.removeFromCart(1, productId);
-            await loadCart();
+            const userId = 1;
+            if (newQuantity <= 0) {
+                await removeItem(productId);
+            } else {
+                await api.updateCartItem(userId, productId, newQuantity);
+                await loadCart(); // Reload to get updated totals
+            }
         } catch (err) {
-            setError('Failed to remove item');
+            setError('Failed to update quantity');
             console.error(err);
+            await loadCart(); // Reload cart in case of error
         }
     };
 
@@ -80,7 +109,7 @@ const Cart = () => {
                 <section className="cartSection">
                     <div className="cartHeader">
                         <span>PRODUCT</span>
-                        <span>QUANTITY</span> 
+                        <span>QUANTITY</span>
                         <span>TOTAL</span>
                     </div>
 
@@ -133,4 +162,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default Cart; 

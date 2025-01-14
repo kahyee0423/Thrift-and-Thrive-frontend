@@ -22,6 +22,13 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
 
     const subtotal = (price * quantity) || 0;
 
+    const handleRemove = () => {
+        console.log('Removing item:',  productId);
+        if (onRemove) {
+            onRemove(productId);
+        }
+    }
+
     return (
         <div className="cartItem">
             <div className="cartItemImage">
@@ -52,7 +59,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
                 <p className="subtotal">Subtotal: RM {subtotal.toFixed(2)}</p>
                 <button 
                     className="removeButton"
-                    onClick={() => onRemove(productId)}
+                    onClick={handleRemove}
                 >
                     Remove
                 </button>
