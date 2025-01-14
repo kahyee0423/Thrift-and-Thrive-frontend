@@ -22,9 +22,7 @@ export const api = {
             
             const response = await fetch(url, {
                 method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                ...defaultOptions
             });
             
             console.log('Response status:', response.status);
@@ -43,16 +41,18 @@ export const api = {
     },
 
     async getProduct(id) {
-        const response = await fetch(`${API_BASE_URL}/products?id=${id}`);
+        const response = await fetch(`${API_BASE_URL}/products?id=${id}`, defaultOptions);
+        if (!response.ok) throw new Error('Failed to fetch product');
         return await response.json();
     },
 
     // Cart endpoints
     async getCart(userId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}`);
+            const response = await fetch(`${API_BASE_URL}/cart?userId=${userId}`, defaultOptions);
+            if (!response.ok) throw new Error('Failed to fetch cart');
             const data = await response.json();
-            console.log('Cart data from API:', data); // Debug log
+            console.log('Cart data from API:', data);
             return data;
         } catch (error) {
             console.error('Error fetching cart:', error);
@@ -63,11 +63,10 @@ export const api = {
     async updateCartItem(userId, productId, quantity) {
         const response = await fetch(`${API_BASE_URL}/cart`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            ...defaultOptions,
             body: JSON.stringify({ userId, productId, quantity })
         });
+        if (!response.ok) throw new Error('Failed to update cart');
         return await response.json();
     },
 
@@ -77,9 +76,7 @@ export const api = {
                 `${API_BASE_URL}/cart?userId=${userId}&productId=${productId}`,
                 {
                     method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
+                    ...defaultOptions
                 }
             );
 
@@ -123,19 +120,76 @@ export const api = {
 
 
     // Order endpoints
-    async createOrder(userId) {
-        const response = await fetch(`${API_BASE_URL}/orders`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ userId }),
-        });
-        return await response.json();
+    async createOrder(userId, shippingAddress) {
+        try {
+            console.log('Creating order for user:', userId);
+            console.log('Shipping address:', shippingAddress);
+
+            const response = await fetch(`${API_BASE_URL}/orders`, {
+                method: 'POST',
+                ...defaultOptions,
+                body: JSON.stringify({
+                    userId,
+                    shippingAddress
+                })
+            });
+
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.message || 'Failed to create order');
+            }
+
+            const order = await response.json();
+            console.log('Order created:', order);
+            return order;
+        } catch (error) {
+            console.error('Error creating order:', error);
+            throw error;
+        }
     },
 
     async getUserOrders(userId) {
-        const response = await fetch(`${API_BASE_URL}/orders?userId=${userId}`);
-        return await response.json();
+        try {
+            const response = await fetch(`${API_BASE_URL}/orders?userId=${userId}`, defaultOptions);
+            if (!response.ok) throw new Error('Failed to fetch orders');
+            const orders = await response.json();
+            console.log('User orders:', orders);
+            return orders;
+        } catch (error) {
+            console.error('Error fetching orders:', error);
+            throw error;
+        }
+    },
+
+    // Checkout helper methods
+    async validateShippingAddress(address) {
+        // Add any client-side validation here
+        const required = ['fullName', 'address', 'city', 'state', 'postalCode', 'phone'];
+        const missing = required.filter(field => !address[field]);
+        
+        if (missing.length > 0) {
+            throw new Error(`Missing required fields: ${missing.join(', ')}`);
+        }
+
+        return true;
+    },
+
+    async processCheckout(userId, shippingAddress) {
+        try {
+            // 1. Validate shipping address
+            await this.validateShippingAddress(shippingAddress);
+
+            // 2. Create the order
+            const order = await this.createOrder(userId, shippingAddress);
+
+            // 3. Return the created order
+            return order;
+        } catch (error) {
+            console.error('Checkout process failed:', error);
+            throw error;
+        }
     }
-}; 
+};
+
+// Export individual functions for direct use
+export const { getCart, createOrder, getUserOrders, processCheckout } = api; 

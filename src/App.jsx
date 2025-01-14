@@ -22,6 +22,7 @@ import AdminMainPage from './component/User/Admin/AdminPanel/AdminMainPage/Admin
 import CustomerDetails from './component/User/Admin/AdminPanel/CustomerDetails/CustomerDetails';
 import OrdersDetails from './component/User/Admin/AdminPanel/OrdersDetails/OrdersDetails';
 import ProductAvailable from './component/User/Admin/AdminPanel/ProductAvailable/ProductAvailable';
+import OrderConfirmation from './component/BarComponent/Cart/OrderConfirmation/OrderConfirmation';
 
 const App = () => {
   return (
@@ -47,6 +48,8 @@ const App = () => {
       <Route path="/CustomerDetails" element={<CustomerDetails />} />
       <Route path="/OrdersDetails" element={<OrdersDetails />} />
       <Route path="/ProductAvailable" element={<ProductAvailable />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
     </Routes>
   );
 };
