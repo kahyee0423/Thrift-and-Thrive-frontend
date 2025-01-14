@@ -56,4 +56,30 @@
     text-align: center;
     padding: 2rem;
     color: #666;
+}
+
+.addToCartSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.quantity {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.addToCartButton {
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.addToCartButton:hover {
+    background: #0056b3;
 } 

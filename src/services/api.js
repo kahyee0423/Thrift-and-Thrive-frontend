@@ -78,6 +78,32 @@ export const api = {
         return await response.json();
     },
 
+    async addToCart(userId, productId, quantity) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/cart`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    userId, 
+                    productId, 
+                    quantity 
+                })
+            });
+            if (!response.ok) {
+                throw new Error('Failed to add to cart');
+            }
+            const data = await response.json();
+            console.log('Add to cart response:', data);
+            return data;
+        } catch (error) {
+            console.error('Error adding to cart:', error);
+            throw error;
+        }
+    },
+
+
     // Order endpoints
     async createOrder(userId) {
         const response = await fetch(`${API_BASE_URL}/orders`, {

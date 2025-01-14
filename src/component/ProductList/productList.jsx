@@ -6,31 +6,61 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [cartQuantities, setCartQuantities] = useState({});
 
     useEffect(() => {
-        const fetchProducts = async () => {
+        const fetchData = async () => {
             try {
                 setLoading(true);
                 setError(null);
-                console.log('Fetching products with:', { category, currentPage, productsPerPage });
-                const data = await api.getAllProducts(category, currentPage, productsPerPage);
-                console.log('Received products:', data);
-                setProducts(Array.isArray(data) ? data : []);
+                
+                // Fetch products
+                const productsData = await api.getAllProducts(category, currentPage, productsPerPage);
+                setProducts(Array.isArray(productsData) ? productsData : []);
+
+                // Fetch cart to get current quantities
+                const userId = 1; // Replace with actual user ID
+                const cartData = await api.getCart(userId);
+                
+                // Create a map of productId to quantity
+                const quantities = {};
+                if (cartData && cartData.items) {
+                    cartData.items.forEach(item => {
+                        quantities[item.productId] = item.quantity;
+                    });
+                }
+                setCartQuantities(quantities);
+
             } catch (err) {
-                console.error('Error fetching products:', err);
-                setError(err.message || 'Failed to load products');
+                console.error('Error fetching data:', err);
+                setError(err.message || 'Failed to load data');
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchProducts();
+        fetchData();
     }, [category, currentPage, productsPerPage]);
 
     const handleAddToCart = async (productId) => {
         try {
             const userId = 1; // Replace with actual user ID
-            await api.addToCart(userId, productId, 1);
+            const currentQuantity = cartQuantities[productId] || 0;
+            const newQuantity = currentQuantity + 1;
+            
+            // Update cart in backend
+            await api.addToCart(userId, productId, newQuantity);
+            
+            // Fetch updated cart to ensure sync with backend
+            const updatedCart = await api.getCart(userId);
+            if (updatedCart && updatedCart.items) {
+                const newQuantities = {};
+                updatedCart.items.forEach(item => {
+                    newQuantities[item.productId] = item.quantity;
+                });
+                setCartQuantities(newQuantities);
+            }
+            
             alert('Product added to cart!');
         } catch (err) {
             console.error('Error adding to cart:', err);
@@ -63,16 +93,21 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
                     <p>{product.description}</p>
                     <p>RM {product.price?.toFixed(2) || '0.00'}</p>
                     <p className="subcategory">{product.subcategory}</p>
-                    <button 
-                        className="addToCartButton"
-                        onClick={() => handleAddToCart(product.id)}
-                    >
-                        Add to Cart
-                    </button>
+                    <div className="addToCartSection">
+                        <span className="quantity">
+                            {cartQuantities[product.id] || 0} in cart
+                        </span>
+                        <button 
+                            className="addToCartButton"
+                            onClick={() => handleAddToCart(product.id)}
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
             ))}
         </div>
     );
 };
 
-export default ProductList; 
+export default ProductList;
