@@ -55,5 +55,27 @@ export const adminApi = {
             console.error('Error fetching orders:', error);
             throw error;
         }
+    },
+    async addProduct(productData) {
+        try {
+            const response = await fetch(`${ADMIN_API_URL}/products`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    ...api.getAuthHeaders()
+                },
+                body: JSON.stringify(productData)
+            });
+
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.message || 'Failed to add product');
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error('Error adding product:', error);
+            throw error;
+        }
     }
 }; 

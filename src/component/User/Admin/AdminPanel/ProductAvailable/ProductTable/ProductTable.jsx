@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { adminApi } from '../../../../../../services/adminApi';
+import AddProductForm from '../AddProductForm/AddProductForm';
 import './ProductTable.css'
 
 const ProductTable = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [showAddForm, setShowAddForm] = useState(false);
 
     useEffect(() => {
         loadProducts();
@@ -26,6 +28,7 @@ const ProductTable = () => {
         try {
             await adminApi.addProduct(productData);
             loadProducts(); // Reload the list after adding
+            setShowAddForm(false); // Close the form after successful addition
         } catch (error) {
             console.error('Failed to add product:', error);
         }
@@ -42,7 +45,7 @@ const ProductTable = () => {
                 <button 
                     className="product-addButton" 
                     aria-label="Add new item"
-                    onClick={() => handleAddProduct(/* Add product form data */)}
+                    onClick={() => setShowAddForm(true)}
                 >
                     <img src="./asset/add.png" alt="" className="addIcon" />
                     <span>Add item</span>
@@ -87,6 +90,13 @@ const ProductTable = () => {
                     </div>
                 ))}
             </div>
+            
+            {showAddForm && (
+                <AddProductForm
+                    onSubmit={handleAddProduct}
+                    onClose={() => setShowAddForm(false)}
+                />
+            )}
         </main>
     );
 }
