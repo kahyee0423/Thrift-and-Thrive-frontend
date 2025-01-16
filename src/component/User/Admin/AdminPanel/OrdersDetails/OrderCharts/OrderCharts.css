@@ -1,0 +1,25 @@
+.order-charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        flex: 100%;
+    }
+} 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { adminApi } from '../../../../../../services/adminApi';
+import OrderCharts from '../OrderCharts/OrderCharts';
 import './OrdersTable.css'
 
 const OrdersTable = () => {
@@ -63,6 +64,7 @@ const OrdersTable = () => {
           ))}
         </tbody>
       </table>
+      <OrderCharts orders={orders} />
     </section>
   )
 }
