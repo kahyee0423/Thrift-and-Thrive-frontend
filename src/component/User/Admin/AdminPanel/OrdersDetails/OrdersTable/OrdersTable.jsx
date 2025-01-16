@@ -1,57 +1,70 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { adminApi } from '../../../../../../services/adminApi';
 import './OrdersTable.css'
 
-const orders = [
-    {
-      id: 1,
-      username: 'Tan Tien Peng',
-      itemorder: 'Shoes',
-      invoiceNo: '2356320',
-      dateorder: '23-2-2024',
-      status: 'pending'
-    }
-  ];
-
 const OrdersTable = () => {
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadOrders();
+  }, []);
+
+  const loadOrders = async () => {
+    try {
+      const data = await adminApi.getOrders();
+      console.log('Loaded orders:', data); // Debug log
+      setOrders(Array.isArray(data) ? data : []);
+    } catch (error) {
+      console.error('Failed to load orders:', error);
+      setOrders([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading orders...</div>;
+  }
+
   return (
     <section className="orderSection">
-          <h2 className="order-sectionTitle">Orders</h2>
-          <table className="order-customerTable" role="grid">
-            <thead>
-              <tr>
-                <th className="order-tableHeader" scope="col">No</th>
-                <th className="order-tableHeader" scope="col">Username</th>
-                <th className="order-tableHeader" scope="col">Item Order</th>
-                <th className="order-tableHeader" scope="col">Invoice No</th>
-                <th className="order-tableHeader" scope="col">Date Order</th>
-                <th className="order-tableHeader" scope="col">Status</th>
-                <th className="order-tableHeader" scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((orders) => (
-                <tr key={orders.id}>
-                  <td className="order-tableCell">{orders.id}</td>
-                  <td className="order-tableCell">{orders.username}</td>
-                  <td className="order-tableCell">{orders.itemorder}</td>
-                  <td className="order-tableCell">{orders.invoiceNo}</td>
-                  <td className="order-tableCell">{orders.dateorder}</td>
-                  <td className="order-tableCell">{orders.status}</td>
-                  <td className="order-tableCell">
-                    <img
-                      src="./asset/action-button.png"
-                      className="order-actionIcon"
-                      alt="Edit customer"
-                      role="button"
-                      tabIndex="0"
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+      <h2 className="order-sectionTitle">Orders</h2>
+      <table className="order-customerTable" role="grid">
+        <thead>
+          <tr>
+            <th className="order-tableHeader" scope="col">Order ID</th>
+            <th className="order-tableHeader" scope="col">User ID</th>
+            <th className="order-tableHeader" scope="col">Date</th>
+            <th className="order-tableHeader" scope="col">Total (RM)</th>
+            <th className="order-tableHeader" scope="col">Status</th>
+            <th className="order-tableHeader" scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((order) => (
+            <tr key={order.id}>
+              <td className="order-tableCell">{order.id}</td>
+              <td className="order-tableCell">{order.userId}</td>
+              <td className="order-tableCell">{order.orderDate}</td>
+              <td className="order-tableCell">{order.total}</td>
+              <td className="order-tableCell">{order.status}</td>
+              <td className="order-tableCell">
+                <img
+                  src="./asset/action-button.png"
+                  className="order-actionIcon"
+                  alt="View order details"
+                  role="button"
+                  tabIndex="0"
+                  onClick={() => console.log('View order:', order.id)}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   )
 }
 
-export default OrdersTable
+export default OrdersTable 

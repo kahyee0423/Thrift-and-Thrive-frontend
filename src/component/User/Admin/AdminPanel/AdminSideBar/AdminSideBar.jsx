@@ -3,16 +3,26 @@ import './AdminSideBar.css'
 import { useNavigate } from 'react-router-dom';
 
 const AdminSideBar = () => {
-
   const navigate = useNavigate();
 
   const handleSignOut = () => {
     navigate('/');
   };
 
+  const handleBackToHome = () => {
+    navigate('/'); // This goes directly to the home page
+  };
+
   return (
     <nav className="admin-sidebarNav" role="navigation" aria-label="Main navigation">
       <h1 className="admin-welcomeHeading">Welcome, Admin</h1>
+      <button 
+        onClick={handleBackToHome}
+        className="admin-backButton"
+        aria-label="Go back to home page"
+      >
+        ← Back to Home
+      </button>
       <a href="/CustomerDetails" className="admin-navLink">
         Customer Details
       </a>
@@ -31,6 +41,6 @@ const AdminSideBar = () => {
       </button>
     </nav>
   );
-}
+};
 
-export default AdminSideBar
+export default AdminSideBar; 

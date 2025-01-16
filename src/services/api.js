@@ -185,8 +185,17 @@ export const api = {
             console.error('Search API error:', error);
             throw error;
         }
+    },
+
+    getAuthHeaders() {
+        const token = localStorage.getItem('token'); // or however you store your auth token
+        return {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+        };
     }
 };
 
 // Export individual functions for direct use
-export const { getCart, createOrder, getUserOrders, processCheckout } = api; 
+export const { getCart, createOrder, getUserOrders, processCheckout } = api;  

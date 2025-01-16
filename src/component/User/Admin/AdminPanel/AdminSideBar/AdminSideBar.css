@@ -66,6 +66,31 @@
     opacity: 0.8;
     outline: 2px solid #fff;
   }
+
+  .admin-backButton {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    width: fit-content;
+    color: #333;
+    font-weight: 500;
+}
+
+.admin-backButton:hover {
+    background-color: #e0e0e0;
+}
+
+.admin-backButton:active {
+    background-color: #d0d0d0;
+} 
   
   @media (max-width: 991px) {
     .admin-sidebarNav {

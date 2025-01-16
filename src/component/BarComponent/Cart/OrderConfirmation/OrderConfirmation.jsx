@@ -42,11 +42,6 @@ const OrderConfirmation = () => {
                     <div className="orderConfirmation-items">
                         {order.items.map(item => (
                             <div key={item.productId} className="orderConfirmation-item">
-                                <img 
-                                    src={item.imageUrl} 
-                                    alt={item.productName}
-                                    className="orderConfirmation-itemImage"
-                                />
                                 <div className="orderConfirmation-itemDetails">
                                     <p className="orderConfirmation-itemName">
                                         {item.productName}

@@ -1,20 +1,28 @@
-import React from 'react'
-import './AdminMainPage.css'
+import React from 'react';
+import { useAuth } from '../../../../../contexts/AuthContext';
+import { Navigate } from 'react-router-dom';
 import AdminSideBar from '../AdminSideBar/AdminSideBar';
+import './AdminMainPage.css';
 
 const AdminMainPage = () => {
-    return (
-        <main className="mainpage-adminContainer">
-          <div className="mainpage-contentWrapper">
-            <div className="mainpage-sidebarColumn">
-              <AdminSideBar />
-            </div>
-            <div className="mainpage-main">
-              Welcome, Admin!
-            </div>
-          </div>
-        </main>
-      );
-}
+    const { user, isAdmin } = useAuth();
 
-export default AdminMainPage
+    if (!user || !isAdmin) {
+        return <Navigate to="/AdminLogin" />;
+    }
+
+    return (
+        <div className="mainpage-adminContainer">
+            <div className="mainpage-contentWrapper">
+                <div className="mainpage-sidebarColumn">
+                    <AdminSideBar />
+                </div>
+                <div className="mainpage-main">
+                    <h1>Welcome to Admin Dashboard</h1>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default AdminMainPage; 
