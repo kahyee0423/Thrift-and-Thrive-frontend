@@ -8,6 +8,7 @@ import { REVIEWS } from '../../utils/data.js';
 import { FEATURES } from '../../utils/data'; 
 import { useNavigate } from 'react-router-dom';
 import ProductCard from '../ProductCard/productCard.jsx';
+import NavigationBar from '../NavigationBar/NavigationBar.jsx';
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -18,8 +19,7 @@ const Homepage = () => {
 
   return (
     <main className="homePage">
-      <Header />
-      
+      <NavigationBar/>
       <section className="hero">
         <img src="./asset/homepage.jpeg" alt="Hero banner" className="HeroImage"/>
         <div className="mainContent">

@@ -1,0 +1,80 @@
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.search-result-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.search-result-details {
+    flex: 1;
+}
+
+.search-result-details h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+}
+
+.search-result-details p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.search-result-price {
+    font-weight: bold;
+    color: #000;
+}
+
+.search-results-empty {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+}
+
+.search-result-category {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.search-result-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-keywords {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+    font-style: italic;
+} 

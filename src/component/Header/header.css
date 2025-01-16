@@ -119,6 +119,29 @@
     outline: 2px solid #328da3;
     outline-offset: 2px;
   }
+
+  .header.search-mode {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header.search-mode {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+   
+}
   
   @media (max-width: 991px) {
     .navigation {

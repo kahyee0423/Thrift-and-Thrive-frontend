@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './NavigationBar.css';
 import UserMenu from '../BarComponent/UserMenu/UserMenu';
 import NavigationLink from './NavLink/NavLink.jsx';
 import { useNavigate } from 'react-router-dom';
+import SearchBar from '../BarComponent/SearchBar/SearchBar.jsx';
+import SearchResults from '../BarComponent/SearchResults/SearchResults.jsx';
+import { api } from '../../services/api';
 
 const navigationLinks = [
   { label: 'Home', href: '/' },
@@ -12,32 +15,35 @@ const navigationLinks = [
   { label: 'Accessories', href: '/accessories' },
 ];
 
-const icons = [
-  {
-    src: './asset/search-icon.png',
-    alt: 'Search',
-    isCart: false,
-  },
-  {
-    src: './asset/cart-icon.png',
-    alt: 'Shopping Cart',
-    isCart: false,
-  },
-  {
-    src: './asset/profile-icon.png',
-    alt: 'User Account',
-    isCart: false,
-    isUser: true, 
-  },
-];
-
 const NavigationBar = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [searchResults, setSearchResults] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const toggleSearch = () => {
-    setIsSearchVisible((prev) => !prev);
-  };
+  const handleSearch = useCallback(async (term) => {
+    console.log('Searching for:', term);
+    setSearchTerm(term);
+
+    if (!term?.trim()) {
+      setSearchResults(null);
+      return;
+    }
+
+    try {
+      const results = await api.searchProducts(term);
+      console.log('Search results:', results);
+      setSearchResults(results);
+    } catch (error) {
+      console.error('Search failed:', error);
+      setSearchResults([]);
+    }
+  }, []);
+
+  const toggleSearch = useCallback(() => {
+    setIsSearchVisible(prev => !prev);
+    setSearchResults(null);
+  }, []);
 
   const goToCart = () => {
     navigate('/Cart');
@@ -47,9 +53,22 @@ const NavigationBar = () => {
     <>
       {isSearchVisible ? (
         <div className="search-bar-container">
-          <div className="search-bar">
-            <input type="text" placeholder="Search..." />
-            <button onClick={toggleSearch}>X</button>
+          <div className="search-container">
+            <SearchBar 
+              onSearch={handleSearch}
+              toggleSearch={toggleSearch}
+            />
+            {searchResults && (
+              <SearchResults 
+                results={searchResults}
+                searchTerm={searchTerm}
+                onClose={() => {
+                  setSearchResults(null);
+                  setIsSearchVisible(false);
+                  setSearchTerm('');
+                }}
+              />
+            )}
           </div>
         </div>
       ) : (
@@ -91,4 +110,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default NavigationBar; 
