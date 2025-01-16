@@ -1,26 +1,21 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
-import './UserSignUp.css';
+import './UserSignIn.css';
 import NavigationBar from '../../NavigationBar/NavigationBar';
 import Footer from '../../Footer/footer';
 
-const UserSignUp = () => {
+const UserSignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const { signUp, loading } = useAuth();
+    const { signIn, loading } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            alert("Passwords don't match!");
-            return;
-        }
         try {
-            await signUp(email, password);
+            await signIn(email, password, false);
         } catch (error) {
-            console.error('Sign up failed:', error);
+            console.error('Sign in failed:', error);
         }
     };
 
@@ -29,7 +24,7 @@ const UserSignUp = () => {
             <NavigationBar />
             <main className="mainContent">
                 <form onSubmit={handleSubmit} className="loginForm">
-                    <h1 className="formTitle">Create Account</h1>
+                    <h1 className="formTitle">Sign In</h1>
                     <div className="formGroup">
                         <input
                             type="email"
@@ -50,21 +45,14 @@ const UserSignUp = () => {
                             required
                         />
                     </div>
-                    <div className="formGroup">
-                        <input
-                            type="password"
-                            className="formInput"
-                            placeholder="Confirm Password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            required
-                        />
-                    </div>
+                    <Link to="/forgot-password" className="forgotPassword">
+                        Forgot Password?
+                    </Link>
                     <button type="submit" className="submitButton" disabled={loading}>
-                        {loading ? 'Creating Account...' : 'Create Account'}
+                        {loading ? 'Signing in...' : 'Sign In'}
                     </button>
-                    <Link to="/UserLogin" className="createAccount">
-                        Already have an account? Sign In
+                    <Link to="/UserSignUp" className="createAccount">
+                        Don't have an account? Sign Up
                     </Link>
                 </form>
             </main>
@@ -73,4 +61,4 @@ const UserSignUp = () => {
     );
 };
 
-export default UserSignUp; 
+export default UserSignIn; 

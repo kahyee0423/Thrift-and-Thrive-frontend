@@ -1,51 +1,58 @@
-import React from 'react'
-import './AdminLogin.css'
-import Footer from '../../Footer/footer'
-import NavigationBar from '../../NavigationBar/NavigationBar'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useAuth } from '../../../contexts/AuthContext';
+import './AdminLogin.css';
+import NavigationBar from '../../NavigationBar/NavigationBar';
+import Footer from '../../Footer/footer';
 
 const AdminLogin = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { signIn, loading } = useAuth();
 
-  const navigate = useNavigate();
-  const goToAdminPanel = () => {
-    navigate('/AdminPanel');
-  }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            // Pass true as the third argument to indicate admin login
+            await signIn(email, password, true);
+        } catch (error) {
+            console.error('Admin login failed:', error);
+        }
+    };
 
-  return (
-    <div className="pageContainer">
-    <NavigationBar />
-    
-    <main className="mainContent" role="main">
-    <form className="loginForm" onSubmit={(e) => e.preventDefault()}>
-    <h2 className="formTitle">Admin Login</h2>
-    <div className="inputGroup">
-            <label htmlFor="email" className="visually-hidden">Email</label>
-            <input
-              type="email"
-              id="email"
-              className="formInput"
-              placeholder="Email"
-              required
-              aria-required="true"
-            />
-          </div>
-          <div className="inputGroup">
-            <label htmlFor="password" className="visually-hidden">Password</label>
-            <input
-              type="password"
-              id="password"
-              className="formInput"
-              placeholder="Password"
-              required
-              aria-required="true"
-            />
-          </div>
-          <button type="submit" className="admin-submitButton" onClick={goToAdminPanel}>Sign in</button>
-          </form>
-    </main>
-    <Footer />
-    </div>
-  )
-}
+    return (
+        <div className="loginPage">
+            <NavigationBar />
+            <main className="mainContent">
+                <form onSubmit={handleSubmit} className="loginForm">
+                    <h1 className="formTitle">Admin Login</h1>
+                    <div className="formGroup">
+                        <input
+                            type="email"
+                            className="formInput"
+                            placeholder="Admin Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="formGroup">
+                        <input
+                            type="password"
+                            className="formInput"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="submitButton" disabled={loading}>
+                        {loading ? 'Signing in...' : 'Sign In as Admin'}
+                    </button>
+                </form>
+            </main>
+            <Footer />
+        </div>
+    );
+};
 
-export default AdminLogin;
+export default AdminLogin; 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
 import './App.css';
 import Homepage from './component/Homepage/homepage';
 import AboutUs from './component/AboutUs/aboutUs'; 
@@ -13,7 +14,7 @@ import TermsOfService from './component/TermsOfService/TermsOfService';
 import PrivacyPolicy from './component/PrivacyPolicy/PrivacyPolicy';
 import ReturnPolicy from './component/ReturnPolicy/ReturnPolicy';
 import AdminLogin from './component/User/Admin/AdminLogin';
-import UserLogin from './component/User/Login/UserLogin';
+import UserSignIn from './component/User/Login/UserSignIn';
 import UserSignUp from './component/User/SignUp/UserSignUp';
 import Cart from './component/BarComponent/Cart/Cart';
 import Account from './component/User/Account/Account';
@@ -26,32 +27,33 @@ import OrderConfirmation from './component/BarComponent/Cart/OrderConfirmation/O
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/AboutUs" element={<AboutUs />} />
-      <Route path="/men" element={<Men />} />
-      <Route path="/women" element={<Women />} />
-      <Route path="/kids" element={<Kids />} />
-      <Route path="/accessories" element={<Accessories />} />
-      <Route path="/contact" element={<Contact />}/>
-      <Route path="/FAQ" element={<FAQ />} />
-      <Route path="/TermsOfService" element={<TermsOfService />} />
-      <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-      <Route path="/ReturnPolicy" element={<ReturnPolicy />} />
-      <Route path="/AdminLogin" element={<AdminLogin />} />
-      <Route path="/UserLogin" element={<UserLogin />} />
-      <Route path="/UserSignUp" element={<UserSignUp />} />
-      <Route path="/Cart" element={<Cart />} />
-      <Route path="/Account" element={<Account />} />
-      <Route path="/Checkout" element={<Checkout />} />
-      <Route path="/AdminPanel" element={<AdminMainPage />} />
-      <Route path="/CustomerDetails" element={<CustomerDetails />} />
-      <Route path="/OrdersDetails" element={<OrdersDetails />} />
-      <Route path="/ProductAvailable" element={<ProductAvailable />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/kids" element={<Kids />} />
+        <Route path="/accessories" element={<Accessories />} />
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/TermsOfService" element={<TermsOfService />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/ReturnPolicy" element={<ReturnPolicy />} />
+        <Route path="/AdminLogin" element={<AdminLogin />} />
+        <Route path="/UserLogin" element={<UserSignIn />} />
+        <Route path="/UserSignUp" element={<UserSignUp />} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Account" element={<Account />} />
+        <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/AdminPanel" element={<AdminMainPage />} />
+        <Route path="/CustomerDetails" element={<CustomerDetails />} />
+        <Route path="/OrdersDetails" element={<OrdersDetails />} />
+        <Route path="/ProductAvailable" element={<ProductAvailable />} />
+        <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
+      </Routes>
+    </AuthProvider>
   );
 };
 
-export default App;
+export default App; 
