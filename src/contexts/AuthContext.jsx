@@ -13,21 +13,32 @@ export const AuthProvider = ({ children }) => {
         setLoading(true);
         setError(null);
         try {
+            console.log('Attempting sign-in for:', email);
             const response = await fetch('http://localhost:8000/api/users/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ 
+                    email, 
+                    password,
+                    isAdminLogin
+                }),
             });
 
+            const data = await response.json();
+            
             if (!response.ok) {
-                throw new Error('Invalid credentials');
+                console.error('Sign-in failed:', data.error);
+                throw new Error(data.error || 'Invalid credentials');
             }
 
-            const userData = await response.json();
+            const userData = data;
             
-            // Check if trying to access admin login with non-admin role
+            if (!isAdminLogin && userData.role === 'admin') {
+                throw new Error('Administrators must use the admin login page');
+            }
+
             if (isAdminLogin && userData.role !== 'admin') {
                 throw new Error('Unauthorized: Admin access only');
             }
@@ -46,6 +57,7 @@ export const AuthProvider = ({ children }) => {
             return userData;
         } catch (err) {
             setError(err.message);
+            console.error('Sign-in error:', err);
             alert(err.message);
             throw err;
         } finally {

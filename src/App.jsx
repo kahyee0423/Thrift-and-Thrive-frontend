@@ -24,6 +24,7 @@ import CustomerDetails from './component/User/Admin/AdminPanel/CustomerDetails/C
 import OrdersDetails from './component/User/Admin/AdminPanel/OrdersDetails/OrdersDetails';
 import ProductAvailable from './component/User/Admin/AdminPanel/ProductAvailable/ProductAvailable';
 import OrderConfirmation from './component/BarComponent/Cart/OrderConfirmation/OrderConfirmation';
+import ForgotPassword from './component/User/ForgotPassword/ForgotPassword';
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/AdminLogin" element={<AdminLogin />} />
         <Route path="/UserLogin" element={<UserSignIn />} />
         <Route path="/UserSignUp" element={<UserSignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Checkout" element={<Checkout />} />
