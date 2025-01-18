@@ -124,11 +124,11 @@ export const api = {
 
     async getUserOrders(userId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/orders?userId=${userId}`, defaultOptions);
-            if (!response.ok) throw new Error('Failed to fetch orders');
-            const orders = await response.json();
-            console.log('User orders:', orders);
-            return orders;
+            const response = await fetch(`${API_BASE_URL}/orders/user/${userId}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch orders');
+            }
+            return await response.json();
         } catch (error) {
             console.error('Error fetching orders:', error);
             throw error;
