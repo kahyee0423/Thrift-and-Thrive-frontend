@@ -30,6 +30,7 @@
   padding: 0 20px; /* Add padding */
 }
 
+
 .cartHeader {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr; /* Use grid for better alignment */
@@ -39,6 +40,24 @@
   margin-bottom: 15px;
   border-bottom: 1px solid #000;
   padding: 15px 0;
+}
+
+/* Specific styling for each header column */
+.productHeader {
+  flex: 1; /* Keeps PRODUCT in its place */
+  text-align: left;
+}
+
+.quantityHeader {
+  flex: 1; /* Adjusts QUANTITY's position */
+  margin-left: 20px; /* Moves it to the right */
+  text-align: center; /* Center alignment */
+}
+
+.totalHeader {
+  flex: 1; /* Adjusts TOTAL's position */
+  margin-left: 20px; /* Moves it to the right */
+  text-align: center; /* Center alignment */
 }
 
 .cartSummary {

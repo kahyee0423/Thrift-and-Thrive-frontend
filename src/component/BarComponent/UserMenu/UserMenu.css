@@ -5,18 +5,19 @@
   .menuTrigger {
       cursor: pointer;
   }
-  
-  .menuContainer {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px;
-      min-width: 200px;
-      z-index: 100;
-  }
+
+.menuContainer {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Align to the center horizontally */
+    transform: translateX(-50%); /* Center the menu container */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 200px;
+    z-index: 100;
+}
   
   
   .signInButton,

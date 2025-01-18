@@ -39,7 +39,6 @@ const OrdersTable = () => {
             <th className="order-tableHeader" scope="col">Date</th>
             <th className="order-tableHeader" scope="col">Total (RM)</th>
             <th className="order-tableHeader" scope="col">Status</th>
-            <th className="order-tableHeader" scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -50,16 +49,7 @@ const OrdersTable = () => {
               <td className="order-tableCell">{order.orderDate}</td>
               <td className="order-tableCell">{order.total}</td>
               <td className="order-tableCell">{order.status}</td>
-              <td className="order-tableCell">
-                <img
-                  src="./asset/action-button.png"
-                  className="order-actionIcon"
-                  alt="View order details"
-                  role="button"
-                  tabIndex="0"
-                  onClick={() => console.log('View order:', order.id)}
-                />
-              </td>
+
             </tr>
           ))}
         </tbody>

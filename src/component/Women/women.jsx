@@ -1,79 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './women.css';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Footer from '../Footer/footer';
-import SideBar from '../SideBar/SideBar';
 import { SHOP_PRODUCTS } from '../../utils/data';
 import ProductList from '../ProductList/productList';
 
-const productsPerPage = 12;
-
-const womenFilters = [
-  { title: 'Category', options: ["Dresses", "Tops & Blouses", "Skirts", "Ethnic Wear"] },
-  { title: 'Price range', options: ["$0 - $50", "$51 - $100", "$101 - $200"] }
-];
+const productsPerPage = 18;
 
 const Women = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-    
-  const totalPages = Math.ceil(SHOP_PRODUCTS.filter(product => product.category === "women").length / productsPerPage);
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-  const goToPage = (page) => {
-    setCurrentPage(page)
-  };
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+    return (
+        <main className="Page">
+            <NavigationBar />
 
-  const goToNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-  
-  return (
-    <main className="Page">
-      <NavigationBar />
-      
-      <img
-        src="./asset/women3.jpg"
-        alt="Women's Collection Banner"
-        className="banner"
-      />
-      
-      <h1 className="pageTitle">Women's Collection</h1>
-      
-      <div className="contentWrapper">
-        <div className="sideBarAndProductList">
-        <SideBar filters={womenFilters} />
+            <img
+                src="./asset/women3.jpg"
+                alt="Women's Collection Banner"
+                className="banner"
+            />
 
-          <section className="productsGrid">
-          <ProductList category="women" currentPage={currentPage} productsPerPage={productsPerPage} />
-          </section>
-        </div>
+            <h1 className="pageTitle">Women's Collection</h1>
 
-        <div className="paginationWrapper">
-        <div className="pagination">
-          <img src="./asset/left-arrow.png" alt="Previous page" className="paginationIcon" onClick={goToPreviousPage} />
-          {pageNumbers.map((number) => (
-                  <span
-                    key={number}
-                    className={`pageNumber ${currentPage === number ? "active" : ""}`}
-                    onClick={() => goToPage(number)}
-                  >
-                    {number}
-                  </span>
-              ))}
-          <img src="./asset/right-arrow.png" alt="Next page" className="paginationIcon" onClick={goToNextPage} />
-        </div>
-        </div>
-      </div>
+            <div className="contentWrapper">
+                <section className="productsGrid">
+                    <ProductList category="women" productsPerPage={productsPerPage} />
+                </section>
+            </div>
 
-      <Footer />
-    </main>
-  )
-}
+            <Footer />
+        </main>
+    );
+};
 
 export default Women;

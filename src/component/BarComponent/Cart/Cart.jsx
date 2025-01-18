@@ -53,20 +53,20 @@ const Cart = () => {
         try {
             const userId = 1;
             console.log('Removing item:', productId);
-            
+
             // First set quantity to 0
             await api.updateCartItem(userId, productId, 0);
-            
+
             // Then remove from backend
             await api.removeFromCart(userId, productId);
-            
+
             // Update UI immediately
             setCartItems(prevItems => {
                 const updatedItems = prevItems.filter(item => item.productId !== productId);
                 console.log('Updated cart items:', updatedItems);
                 return updatedItems;
             });
-            
+
             // Update total
             setTotal(prevTotal => {
                 const removedItem = cartItems.find(item => item.productId === productId);
@@ -107,10 +107,11 @@ const Cart = () => {
                 <h1 className="CartpageTitle">Your cart</h1>
 
                 <section className="cartSection">
+                    {/* Updated Cart Header to align with new structure */}
                     <div className="cartHeader">
-                        <span>PRODUCT</span>
-                        <span>QUANTITY</span>
-                        <span>TOTAL</span>
+                        <span className="productHeader">PRODUCT</span>
+                        <span className="quantityHeader">QUANTITY</span>
+                        <span className="totalHeader">TOTAL</span>
                     </div>
 
                     {cartItems.length === 0 ? (
@@ -119,12 +120,14 @@ const Cart = () => {
                         </div>
                     ) : (
                         cartItems.map(item => (
-                            <CartItem 
+                            <CartItem
                                 key={item.productId}
                                 item={item} // Pass the entire item object
-                                onUpdateQuantity={(quantity) => 
+                                onUpdateQuantity={(quantity) =>
                                     updateQuantity(item.productId, quantity)}
                                 onRemove={() => removeItem(item.productId)}
+                                /* Pass additional data for subtotal alignment */
+                                showSubtotal={true} // Add this flag to indicate subtotal display
                             />
                         ))
                     )}
@@ -140,15 +143,15 @@ const Cart = () => {
                         </p>
 
                         <div className="cart-actionButtons">
-                            <button 
-                                className="checkoutButton" 
+                            <button
+                                className="checkoutButton"
                                 onClick={() => navigate('/Checkout')}
                                 disabled={cartItems.length === 0}
                             >
                                 Check out
                             </button>
-                            <button 
-                                className="continueButton" 
+                            <button
+                                className="continueButton"
                                 onClick={() => navigate('/')}
                             >
                                 Continue shopping
@@ -157,9 +160,9 @@ const Cart = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Footer/>
         </div>
     );
 };
 
-export default Cart; 
+export default Cart;

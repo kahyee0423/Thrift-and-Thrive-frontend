@@ -17,15 +17,15 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
             try {
                 setLoading(true);
                 setError(null);
-                
+
                 // Fetch products
                 const productsData = await api.getAllProducts(category, currentPage, productsPerPage);
                 setProducts(Array.isArray(productsData) ? productsData : []);
-                
+
                 // Fetch cart to get current quantities
                 const userId = 1; // Replace with actual user ID
                 const cartData = await api.getCart(userId);
-                
+
                 // Create a map of productId to quantity
                 const quantities = {};
                 if (cartData && cartData.items) {
@@ -34,7 +34,7 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
                     });
                 }
                 setCartQuantities(quantities);
-                
+
             } catch (err) {
                 console.error('Error fetching data:', err);
                 setError(err.message || 'Failed to load data');
@@ -51,10 +51,10 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
             const userId = 1; // Replace with actual user ID
             const currentQuantity = cartQuantities[productId] || 0;
             const newQuantity = currentQuantity + 1;
-            
+
             // Use updateCartItem instead of addToCart
             await api.updateCartItem(userId, productId, newQuantity);
-            
+
             // Fetch updated cart to ensure sync with backend
             const updatedCart = await api.getCart(userId);
             if (updatedCart && updatedCart.items) {
@@ -64,7 +64,7 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
                 });
                 setCartQuantities(newQuantities);
             }
-            
+
             alert('Product added to cart!');
         } catch (err) {
             console.error('Error adding to cart:', err);
@@ -85,23 +85,25 @@ const ProductList = ({ category, currentPage, productsPerPage }) => {
         <div className="productsGrid">
             {products.map(product => (
                 <div key={product.id} className="productCard">
-                    <img 
-                        src={process.env.PUBLIC_URL + product.imageUrl} 
-                        alt={product.name}
-                        onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = process.env.PUBLIC_URL + '/placeholder.jpg';
-                        }}
-                    />
+                    <div className="imageContainer">
+                        <img
+                            src={process.env.PUBLIC_URL + product.imageUrl}
+                            alt={product.name}
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = PLACEHOLDER_IMAGE; // Use placeholder for broken images
+                            }}
+                        />
+                    </div>
                     <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                    <p>RM {product.price?.toFixed(2) || '0.00'}</p>
+                    <p className="description">{product.description}</p>
+                    <p className="price">RM {product.price?.toFixed(2) || '0.00'}</p>
                     <p className="subcategory">{product.subcategory}</p>
                     <div className="addToCartSection">
                         <span className="quantity">
                             {cartQuantities[product.id] || 0} in cart
                         </span>
-                        <button 
+                        <button
                             className="addToCartButton"
                             onClick={() => handleAddToCart(product.id)}
                         >

@@ -1,51 +1,94 @@
 .mainpage-adminContainer {
-    background-color: #fff;
-    padding: 0 32px;
-    overflow: hidden;
-    min-height: 100vh;
-    user-select: none;
-  }
-  
-  .mainpage-contentWrapper {
-    gap: 20px;
-    display: flex;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 24px 0;
-  }
-  
-  .mainpage-sidebarColumn {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 28%;
-     overflow: hidden;
-  }
-  
-  .mainpage-main {
-    font-size: 3rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-left: 22rem;
-    margin-top: -40rem;
-  }
-  
-  @media (max-width: 991px) {
-    .mainpage-adminContainer {
-      padding: 0 20px;
-    }
-  
-    .mainpage-contentWrapper {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-    }
-  
-    .mainpage-sidebarColumn,
-    .mainpage-mainColumn {
-      width: 100%;
-      margin-left: 0;
-    }
-  }
+  display: flex;
+  height: 100vh; /* Ensures the container fills the entire screen */
+  background-color: #f8f9fa; /* Match your design theme */
+}
+
+.mainpage-contentWrapper {
+  display: flex;
+  flex: 1;
+  background-color: #f8f9fa; /* Matches the white background of the main section */
+}
+
+
+.mainpage-sidebarColumn {
+  width: 350px;
+  background-color: #007bff; /* Use your sidebar's blue color */
+  color: #fff;
+  height: 100vh; /* Ensure it spans the full height of the screen */
+}
+
+.mainpage-main {
+  flex: 1;
+  background-color: #f8f9fa; /* Matches the main content's background */
+  padding: 20px;
+}
+
+.mainpage-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mainpage-header h1 {
+  margin: 0;
+  color: #343a40;
+  font-size: 2.5rem;
+}
+
+.mainpage-header p {
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.mainpage-dashboardWidgets {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.widget {
+  flex: 1 1 calc(25% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.widget h3 {
+  margin: 0 0 10px;
+  color: #495057;
+  font-size: 1.2rem;
+}
+
+.widget p {
+  margin: 0;
+  color: #007bff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mainpage-reports {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mainpage-reports h2 {
+  margin-bottom: 15px;
+  color: #343a40;
+}
+
+.mainpage-reports ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.mainpage-reports ul li {
+  margin-bottom: 10px;
+  color: #6c757d;
+  font-size: 1rem;
+}

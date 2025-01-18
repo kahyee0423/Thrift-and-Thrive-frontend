@@ -1,98 +1,102 @@
 .loginPage {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .mainContent {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    padding: 42px 20px;
-  }
-  
-  @media (max-width: 991px) {
-    .mainContent {
-      padding: 40px 16px;
-    }
-  }
-  
-  .loginForm {
-    width: 650px;
-    max-width: 90%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .formTitle {
-    font: 400 48px 'Roboto Condensed', sans-serif;
-    margin: 0 0 41px;
-    text-align: center; 
-    font-weight: bold;
-  }
-  
-  .formGroup {
-    width: 120%;
-    margin-bottom: 26px;
-  }
-  
-  .formInput {
-    width: 80%;
-    padding: 20px; 
-    border-radius: 10px;
-    background-color: rgba(217, 217, 217, 0.4);
-    border: none;
-    font-size: 20px; 
-    font-family: Roboto, sans-serif;
-  }
-  
-  .forgotPassword {
-    align-self: flex-start;
-    color: #000;
-    font-size: 16px;
-    text-decoration: none;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  padding: 42px 20px;
+}
+
+@media (max-width: 991px) {
+  .mainContent {
+    padding: 40px 16px;
   }
-  
+}
+
+.loginForm {
+  width: 650px; /* Maximum width for the form */
+  max-width: 90%; /* Responsive adjustment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Ensures content stays aligned in the center */
+  margin: auto; /* Centers the form horizontally */
+}
+.formTitle {
+  font: 400 48px 'Roboto Condensed', sans-serif;
+  margin: 0 0 30px; /* Adjusted margin for spacing */
+  text-align: center;
+  font-weight: bold;
+}
+
+.formGroup {
+  width: 120%;
+  margin-bottom: 20px;
+
+}
+
+.formInput {
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(217, 217, 217, 0.4);
+  border: none;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+}
+
+.forgotPassword {
+  align-self: flex-start;
+  color: #000;
+  font-size: 16px;
+  text-decoration: none;
+
+}
+
+.submitButton {
+  background-color: #080ff0;
+  border: none;
+  border-radius: 8px; /* Slightly reduced radius */
+  color: #fff;
+  cursor: pointer;
+  font: 600 18px Roboto, sans-serif; /* Adjusted font size */
+  padding: 15px 30px; /* Adjusted for better fit */
+  width: 100%; /* Ensures consistent width */
+  max-width: 200px; /* Adds maximum limit */
+}
+
+.createAccount {
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 1.25px;
+  text-decoration: none;
+  margin-top: 10px; /* Adjusted spacing */
+  margin-bottom: 20px; /* Adjusted for balance */
+}
+
+@media (max-width: 991px) {
+  .formTitle {
+    font-size: 36px; /* Adjusted for smaller screens */
+  }
+
   .submitButton {
-    background-color: #080ff0;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
-    font: 600 20px Roboto, sans-serif;
-    padding: 20px 40px; 
-    width: auto;
+    padding: 14px 25px; /* Adjusted for better scaling */
   }
-  
-  .createAccount {
-    color: #000;
-    font-size: 16px;
-    letter-spacing: 1.25px;
-    text-decoration: none;
-    margin-top: 5px;
-    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .formInput {
+    font-size: 16px; /* Reduced for smaller screens */
+    padding: 12px; /* Adjusted padding */
   }
-  
-  @media (max-width: 991px) {
-    .formTitle {
-      font-size: 40px;
-    }
-  
-    .submitButton {
-      padding: 18px 30px;
-    }
+  .submitButton {
+    font-size: 16px; /* Adjusted for consistency */
+    padding: 12px 20px; /* Adjusted for smaller screens */
   }
-  
-  @media (max-width: 600px) {
-    .formInput {
-      font-size: 18px; 
-      padding: 15px; 
-    }
-    .submitButton {
-       font-size: 18px;
-    }
-  }
+}

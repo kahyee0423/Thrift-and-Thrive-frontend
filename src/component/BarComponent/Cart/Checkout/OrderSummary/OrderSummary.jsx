@@ -27,15 +27,15 @@ const OrderSummary = ({ cartItems = [], subtotal = 0 }) => {
                             }}
                         />
                         <div className="orderSummary-productDetails">
-                            <span className="orderSummary-productName">
+                            <div className="orderSummary-productName">
                                 {item.productName}
-                            </span>
-                            <span className="orderSummary-productQuantity">
+                            </div>
+                            <div className="orderSummary-productQuantity">
                                 Quantity: {item.quantity}
-                            </span>
-                            <span className="orderSummary-productPrice">
+                            </div>
+                            <div className="orderSummary-productPrice">
                                 RM {(item.price * item.quantity).toFixed(2)}
-                            </span>
+                            </div>
                         </div>
                     </div>
                 )

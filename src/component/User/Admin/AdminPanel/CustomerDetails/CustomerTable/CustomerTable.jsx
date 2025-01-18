@@ -21,7 +21,6 @@ const CustomerTable = () => {
                 <th className="customer-tableHeader" scope="col">Username</th>
                 <th className="customer-tableHeader" scope="col">Email address</th>
                 <th className="customer-tableHeader" scope="col">Contact number</th>
-                <th className="customer-tableHeader" scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -31,15 +30,6 @@ const CustomerTable = () => {
                   <td className="customer-tableCell">{customer.username}</td>
                   <td className="customer-tableCell">{customer.email}</td>
                   <td className="customer-tableCell">{customer.contactNumber}</td>
-                  <td className="customer-tableCell">
-                    <img
-                      src="./asset/action-button.png"
-                      className="customer-actionIcon"
-                      alt="Edit customer"
-                      role="button"
-                      tabIndex="0"
-                    />
-                  </td>
                 </tr>
               ))}
             </tbody>

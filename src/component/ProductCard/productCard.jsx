@@ -1,10 +1,10 @@
 import React from 'react';
 import './productCard.css';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ image, title, price, description, id }) => {
     const navigate = useNavigate();
-        
+
     const handleCardClick = () => {
         navigate(`/ProductDetails/${id}`);
     };
@@ -23,3 +23,5 @@ const ProductCard = ({ image, title, price, description, id }) => {
 };
 
 export default ProductCard;
+
+

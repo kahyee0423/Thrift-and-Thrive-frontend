@@ -61,7 +61,6 @@ const ProductTable = () => {
                     <span>Condition</span>
                     <span>Measurement</span>
                     <span>Materials</span>
-                    <span>Actions</span>
                 </div>
                 
                 {products.map(product => (
@@ -77,16 +76,6 @@ const ProductTable = () => {
                             ))}
                         </div>
                         <span className="product-materials">{product.materials}</span>
-                        <span className="product-actions">
-                            <img
-                                src="./asset/action-button.png"
-                                className="customer-actionIcon"
-                                alt="Edit product"
-                                role="button"
-                                tabIndex="0"
-                                onClick={() => console.log('Edit product:', product.id)}
-                            />
-                        </span>
                     </div>
                 ))}
             </div>

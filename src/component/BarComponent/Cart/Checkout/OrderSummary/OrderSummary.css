@@ -24,18 +24,23 @@
   }
   
   .orderSummary-productImage {
-    width: 77px;
-    height: 77px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 4px;
   }
   
   .orderSummary-productName {
     flex-grow: 1;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: #000;
   }
-  
+
+.orderSummary-productQuantity {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  color: #000;
+}
   .orderSummary-productPrice {
     font-size: 1.25rem;
     font-weight: 500;

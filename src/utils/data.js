@@ -64,25 +64,36 @@ export const REVIEWS = [ //homepage de reviews
   },
   {
     rating: 4,
-    review: 'I do enjoy my online shopping experience at Thrift & Thrive a lot. Staff will email me when they notice defects that did not mention on the website before they shipped to me. I do appreciate this extra effort a lot. Plus, the refunds process is super quick as well. Highly recommend!',
-    author: 'Ahyeon88'
+    review: 'The order arrived exactly as shown in the photos. Very satisfied with my purchase!',
+    author: 'Sabrina'
   },
   {
-    rating: 3,
-    review: 'I do enjoy my online shopping experience at Thrift & Thrive a lot. Staff will email me when they notice defects that did not mention on the website before they shipped to me. I do appreciate this extra effort a lot. Plus, the refunds process is super quick as well. Highly recommend!',
-    author: 'Ahyeon88'
+    rating: 4,
+    review: 'First time using this platform and I had a great experience.They are very responsive and collection process was very smooth.',
+    author: 'Steve Lee'
   },
   {
     rating: 5,
-    review: 'I do enjoy my online shopping experience at Thrift & Thrive a lot. Staff will email me when they notice defects that did not mention on the website before they shipped to me. I do appreciate this extra effort a lot. Plus, the refunds process is super quick as well. Highly recommend!',
-    author: 'Ahyeon88'
+    review: 'Really liked the quality of the pre-loved clothing & the fast delivery. They clearly mention the size & the condition of the item so that you can make an informed decision. One step ahead to be sustainably fashionable 😄',
+    author: 'Alyessa'
   },
   {
-    rating: 1,
-    review: 'I do enjoy my online shopping experience at Thrift & Thrive a lot. Staff will email me when they notice defects that did not mention on the website before they shipped to me. I do appreciate this extra effort a lot. Plus, the refunds process is super quick as well. Highly recommend!',
-    author: 'Ahyeon88'
+    rating: 5,
+    review: 'As someone who enjoys thrifting online, Thrift & Thrive has been amazing in providing a platform for that!',
+    author: 'MohammadSyamil'
+  },
+  {
+    rating: 5,
+    review: 'Thrift & Thrive has completely transformed how I shop for clothes. Not only can I find trendy, stylish pieces, but the prices are unbeatable. It’s clear that they carefully curate their collection and conduct thorough quality checks, which gives me so much confidence in my purchases. I love that I can update my wardrobe without breaking the bank while also contributing to a more sustainable future. The value for money is exceptional, and it feels great to know that my purchases are helping to reduce waste. This is hands down my favorite place to shop for pre-loved clothing. Thanks Thrift & Thrive ❤️',
+    author: 'Nurul Ain'
+  },
+  {
+    rating: 4,
+    review: 'Good service.',
+    author: 'Melissa K.'
   },
 ];
+
 
 export const FEATURES = [ //homepage de 5 features
   { image: `${process.env.PUBLIC_URL}/asset/quality.png`, title: 'Quality Assured', description: 'Get your items delivered quickly.' },

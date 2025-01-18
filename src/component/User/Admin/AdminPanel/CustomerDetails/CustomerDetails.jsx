@@ -42,7 +42,6 @@ const CustomerDetails = () => {
                                 <th>ID</th>
                                 <th>Email</th>
                                 <th>Role</th>
-                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,16 +50,6 @@ const CustomerDetails = () => {
                                     <td>{customer.id}</td>
                                     <td>{customer.email}</td>
                                     <td>{customer.role}</td>
-                                    <td>
-                                        <img
-                                            src="./asset/action-button.png"
-                                            className="customer-actionIcon"
-                                            alt="Edit customer"
-                                            role="button"
-                                            tabIndex="0"
-                                            onClick={() => console.log('Edit customer:', customer.id)}
-                                        />
-                                    </td>
                                 </tr>
                             ))}
                         </tbody>
