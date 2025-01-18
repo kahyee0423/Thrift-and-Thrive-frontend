@@ -1,21 +1,59 @@
 .accountPage {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    user-select:none;
-  }
-  
-  .mainContent {
-    flex: 1;
-    padding: 40px 60px;
-  }
-  
-  .account-divider {
-    border: 1px solid #000;
-    margin: 40px 0;
-    width: 300%;
-  }
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.account-divider {
+  margin: 40px 0;
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+.not-signed-in {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.not-signed-in h2 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.not-signed-in p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.auth-button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+  background-color: #0056b3;
+} 
   
   @media (max-width: 991px) {
     .mainContent {
