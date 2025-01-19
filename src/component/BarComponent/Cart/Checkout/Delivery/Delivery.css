@@ -1,10 +1,11 @@
 .deliveryForm {
-    background: #fff;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 70%;
-  }
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make it take full width in smaller screens */
+  margin: 0 auto; /* Center the form */
+}
   
   .delivery-sectionTitle {
     font-size: 1.5rem;
@@ -94,15 +95,29 @@
     color: #000;
     cursor: pointer;
   }
-  
-  @media (max-width: 768px) {
+
+  @media(max-width:1500px){
     .deliveryForm {
-      padding: 1.5rem;
+      width: 80%; 
+      padding: 1.5rem; 
     }
-  
+    
     .delivery-nameGroup,
     .delivery-locationGroup {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; 
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .deliveryForm {
+      width: 90%;
+      padding: 1.5rem; 
+    }
+    
+    .delivery-nameGroup,
+    .delivery-locationGroup {
+      grid-template-columns: 1fr; 
       gap: 1rem;
     }
   }

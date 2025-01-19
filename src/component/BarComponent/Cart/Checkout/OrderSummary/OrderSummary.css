@@ -62,10 +62,10 @@
   }
   
   .shipping-total{
-    margin-left:25rem;
+    margin-left:5rem;
   }
   .subtotal-total{
-    margin-left:22.5rem;
+    margin-left:2.5rem;
   }
   .orderSummary-summaryTotal {
     display: flex;
@@ -76,9 +76,17 @@
     font-size: 1.5rem;
     font-weight: 700;
   }
+  @media(max-width:1500px){
+    .orderSummary {
+      width: 90%; 
+      margin-left: 0; 
+    }
+  }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     .orderSummary {
       padding: 1.5rem;
+      width: 90%;
+      margin-left: 0;
     }
   }

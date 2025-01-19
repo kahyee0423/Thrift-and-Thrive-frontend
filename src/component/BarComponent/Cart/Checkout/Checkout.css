@@ -84,6 +84,12 @@
     .mainContent {
       padding: 1rem;
     }
+    @media (max-width: 768px) {
+  .checkout-formGrid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+  }
+}
   }
   
   @media (prefers-reduced-motion: reduce) {
