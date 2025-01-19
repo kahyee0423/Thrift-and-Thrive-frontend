@@ -24,7 +24,7 @@ const AdminSideBar = () => {
         ← Back to Home
       </button>
       <div className="admin-leftSide">
-        <h1 className="admin-panelTitle">Admin Panel</h1>
+      <h1 className="admin-panelTitle">Admin Panel</h1>
       </div>
       
         <a href="/CustomerDetails" className="admin-navLink">
