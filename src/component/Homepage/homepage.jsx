@@ -1,13 +1,10 @@
 import React from 'react';
 import './homepage.css';
-import Header from '../Header/header.jsx';
 import ReviewCard from '../ReviewCard/reviewCard.jsx';
 import Footer from '../Footer/footer.jsx';
-import { PRODUCTS } from '../../utils/data.js';
-import { REVIEWS } from '../../utils/data.js';
+import { REVIEWS, SHOPBANNERDATA } from '../../utils/data.js';
 import { FEATURES } from '../../utils/data'; 
 import { useNavigate } from 'react-router-dom';
-import ProductCard from '../ProductCard/productCard.jsx';
 import NavigationBar from '../NavigationBar/NavigationBar.jsx';
 
 const Homepage = () => {
@@ -79,18 +76,12 @@ const Homepage = () => {
           <section className="whyShopBanner">
               <h2 className="home-sectionTitle">Why Shop with Us?</h2>
               <div className="bannerContent">
-                  <div className="bannerItem greenBackground">
-                      <h3>🎉 Exclusive Discounts</h3>
-                      <p>Save big on pre-loved fashion with up to 50% off every week.</p>
-                  </div>
-                  <div className="bannerItem yellowBackground">
-                      <h3>🌍 Sustainable Shopping</h3>
-                      <p>Join the movement towards an eco-friendly future, one purchase at a time.</p>
-                  </div>
-                  <div className="bannerItem purpleBackground">
-                      <h3>💌 Free Shipping</h3>
-                      <p>Enjoy free delivery for orders over RM 50. Shop more, save more!</p>
-                  </div>
+              {SHOPBANNERDATA.map((item, index) => (
+                    <div key={index} className={`bannerItem ${item.background}`}>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                    ))}
               </div>
           </section>
 

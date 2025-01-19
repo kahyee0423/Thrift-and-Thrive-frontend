@@ -67,6 +67,23 @@ export const REVIEWS = [ //homepage de reviews
   },
 ];
 
+export const SHOPBANNERDATA=[
+{
+  title: "🎉 Exclusive Discounts",
+  description: "Save big on pre-loved fashion with up to 50% off every week.",
+  background: "greenBackground"
+},
+{
+  title: "🌍 Sustainable Shopping",
+  description: "Join the movement towards an eco-friendly future, one purchase at a time.",
+  background: "yellowBackground"
+},
+{
+  title: "💌 Free Shipping",
+  description: "Enjoy free delivery for orders over RM 50. Shop more, save more!",
+  background: "purpleBackground"
+}
+];
 
 export const FEATURES = [ //homepage de 5 features
   { image: `${process.env.PUBLIC_URL}/asset/quality.png`, title: 'Quality Assured', description: 'Get your items delivered quickly.' },
