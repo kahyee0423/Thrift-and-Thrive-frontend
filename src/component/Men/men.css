@@ -1,14 +1,13 @@
-/* Adjust banner size */
 .banner {
   width: 100%;
-  height: 300px; /* Adjust height for a smaller display */
+  height: 300px; 
   object-fit: cover;
 }
 
 /* Style the product grid */
 .productsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamically adjusts columns */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 20px;
   padding: 20px;
 }
