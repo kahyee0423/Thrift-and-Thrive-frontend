@@ -96,7 +96,7 @@
     cursor: pointer;
   }
 
-  @media(max-width:1500px){
+  @media(max-width:1700px){
     .deliveryForm {
       width: 80%; 
       padding: 1.5rem; 

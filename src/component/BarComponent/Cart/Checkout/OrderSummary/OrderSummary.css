@@ -76,7 +76,7 @@
     font-size: 1.5rem;
     font-weight: 700;
   }
-  @media(max-width:1500px){
+  @media(max-width:1700px){
     .orderSummary {
       width: 90%; 
       margin-left: 0; 
