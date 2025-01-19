@@ -10,7 +10,7 @@ const AdminSideBar = () => {
   };
 
   const handleBackToHome = () => {
-    navigate('/'); // This goes directly to the home page
+    navigate('/'); 
   };
 
   return (
@@ -23,7 +23,11 @@ const AdminSideBar = () => {
       >
         ← Back to Home
       </button>
-      <a href="/CustomerDetails" className="admin-navLink">
+      <div className="admin-leftSide">
+        <h1 className="admin-panelTitle">Admin Panel</h1>
+      </div>
+      
+        <a href="/CustomerDetails" className="admin-navLink">
         Customer Details
       </a>
       <a href="/OrdersDetails" className="admin-navLink">
@@ -32,6 +36,7 @@ const AdminSideBar = () => {
       <a href="/ProductAvailable" className="admin-navLink">
         Product List
       </a>
+     
       <button 
         onClick={handleSignOut}
         className="admin-signOutButton"

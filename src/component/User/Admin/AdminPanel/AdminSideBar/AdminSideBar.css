@@ -1,104 +1,197 @@
 .admin-sidebarNav {
-    background-color: rgb(2, 120, 170);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    display: flex;
-    width: 60%;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 48px 21px;
-    font-family: Roboto, sans-serif;
-    border: 1px solid #000;
-    user-select: none;
-  }
-  
-  .admin-welcomeHeading {
-    color: #fff;
-    font-size: 27px;
-    font-weight: 400;
-    align-self: center;
-    margin: 0 0 71px 0;
-    font-style: italic;
-  }
-  
-  .admin-navLink {
-    border-radius: 10px;
-    background-color: rgba(217, 217, 217, 0.4);
-    border-bottom: 1px solid #000;
-    margin-top: 23px;
-    min-height: 70px;
-    padding: 20px;
-    display: flex;       
-    align-items: center;  
-    justify-content: center;
-    color: #000;
-    text-decoration: none;
-    font-size: 24px;
-    transition: background-color 0.2s;
-  }
-  
-  .admin-navLink:hover,
-  .admin-navLink:focus {
-    background-color: rgba(217, 217, 217, 0.6);
-    outline: 2px solid #fff;
-  }
-  
-  .admin-navLink[aria-current="page"] {
-    background-color: rgba(217, 217, 217, 0.7);
-  }
-  
-  .admin-signOutButton {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 300;
-    text-align: center;
-    align-self: center;
-    margin-top: 538px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    transition: opacity 0.2s;
-    font-style: italic;
-  }
-  
-  .admin-signOutButton:hover,
-  .admin-signOutButton:focus {
-    opacity: 0.8;
-    outline: 2px solid #fff;
-  }
+  background-color: rgb(2, 120, 170);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 48px 21px;
+  font-family: Roboto, sans-serif;
+  border: 1px solid #000;
+  user-select: none;
+  position: relative;
+}
 
-  .admin-backButton {
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.2s;
-    width: fit-content;
-    color: #333;
-    font-weight: 500;
+.admin-leftSide {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.admin-panelTitle {
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.admin-welcomeHeading {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 400;
+  align-self: center;
+  margin: 0 0 71px 0;
+  font-style: italic;
+}
+
+.admin-navLink {
+  border-radius: 10px;
+  background-color: rgba(217, 217, 217, 0.4);
+  border-bottom: 1px solid #000;
+  margin-top: 23px;
+  min-height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  transition: background-color 0.2s;
+}
+
+.admin-navLink:hover,
+.admin-navLink:focus {
+  background-color: rgba(217, 217, 217, 0.6);
+  outline: 1px solid #fff;
+}
+
+.admin-navLink[aria-current="page"] {
+  background-color: rgba(217, 217, 217, 0.7);
+}
+
+.admin-signOutButton {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  align-self: center;
+  margin-top: 538px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: opacity 0.2s;
+  font-style: italic;
+}
+
+.admin-signOutButton:hover,
+.admin-signOutButton:focus {
+  opacity: 0.8;
+  outline: 2px solid #fff;
+}
+
+.admin-backButton {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  width: fit-content;
+  color: #333;
+  font-weight: 500;
 }
 
 .admin-backButton:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 .admin-backButton:active {
-    background-color: #d0d0d0;
-} 
-  
-  @media (max-width: 991px) {
-    .admin-sidebarNav {
-      margin-top: 34px;
-      padding: 24px 20px;
-    }
-  
-    .admin-signOutButton {
-      margin-top: 40px;
-    }
+  background-color: #d0d0d0;
+}
+
+@media (max-width: 991px) {
+  .admin-sidebarNav {
+      width: 100%; /* Make the sidebar full width */
+      flex-direction: row; /* Change from column to row */
+      justify-content: space-around; /* Distribute items evenly */
+      padding: 10px 20px; /* Adjust padding */
+      position: fixed; /* Stick it to the top */
+      top: 0;
+      left: 0;
+      z-index: 9999;
   }
+
+  .admin-welcomeHeading {
+      display: none; /* Hide the welcome heading on smaller screens */
+  }
+
+  .admin-navLink {
+      margin-top: 0; /* Remove top margin */
+      margin-right: 20px; /* Add spacing between links */
+      font-size: 18px; /* Adjust font size */
+      min-height: 30px;
+      margin-left: 40px;
+  }
+
+  .admin-signOutButton {
+      margin-top: 0;
+      width: 30%; 
+  }
+
+  .admin-backButton {
+      display: none; /* Optionally hide the back button on smaller screens */
+  }
+}
+
+@media (max-width: 780px) {
+  .admin-navLink {
+    font-size: 14px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px; 
+    min-height: 30px;
+  }
+  .admin-signOutButton {
+    font-size: 16px; 
+    width: 30%; 
+    padding: 8px 12px; 
+    word-break: break-word; 
+    white-space: normal; 
+    text-align: center; 
+  }
+}
+@media (max-width: 600px) {
+  .admin-navLink {
+    padding: 5px; 
+    height: auto; /* Removed fixed height */
+    margin-top: 20px; /* Reduced gap between the links */
+  }
+  
+  .admin-signOutButton {
+    font-size: 14px;
+    margin-left: -30px; /* Adjusted sign out button position if needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-sidebarNav {
+    flex-direction: column; /* Stack the items in a single column */
+    align-items: center; /* Center the items horizontally */
+    padding: 10px; /* Adjust padding for the sidebar */
+  }
+
+  .admin-navLink {
+    padding: 5px; /* Reduced padding */
+    margin-top: 5px; /* Reduced gap between the links */
+    height: auto; /* Let the height adjust dynamically */
+    gap: 5px;
+    display: flex;
+    justify-content: center; /* Center the link text */
+    width: 25%; /* Ensure links take full width */
+  }
+
+  .admin-signOutButton {
+    font-size: 14px;
+    margin-top: 10px; /* Adjusted space between sign-out button and links */
+  }
+}

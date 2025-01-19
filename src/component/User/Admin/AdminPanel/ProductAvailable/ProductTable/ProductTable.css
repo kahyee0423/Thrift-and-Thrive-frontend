@@ -93,11 +93,61 @@
   
   @media (max-width: 991px) {
     .product-productListContainer {
-      margin-top: 40px;
+      margin-top: 100px;
+      margin-left: 20px;
+      width: 95%;
     }
-    .product-gridHeader,
+  }
+
+  @media(max-width: 660px){
+    .product-productListContainer {
+      margin-top: 100px;
+      margin-left: 10px;
+      width: 80%;
+    }
+    .product-productGrid{
+      width: 110%;
+    }
+  }
+
+  @media (max-width: 634px) {
+    .product-productListContainer {
+      margin-top: 100px; /* Adjust top margin to avoid overlap */
+      margin-left: 0; /* Remove left margin */
+      width: 80%; /* Make container full width */
+    }
+  
+    .product-gridHeader {
+      font-size: 12px; /* Reduce font size */
+      gap: 10px; /* Reduce gap between columns */
+    }
+  
     .product-productItem {
-      grid-template-columns: 1fr;
-      gap: 10px;
+      font-size: 12px; /* Reduce font size */
+      gap: 10px; /* Reduce gap between items */
+      padding: 8px 0; /* Adjust padding to make the row smaller */
+    }
+    .product-addButton{
+      margin-left: 5rem;
+      margin-right: -4rem;
+    }
+    .product-title{
+      font-size: 24px;
+    }
+  }
+  
+  @media(max-width: 468px){
+    .product-productListContainer {
+      margin-top: 270px; /* Adjust top margin to avoid overlap */
+      margin-left: 0; /* Remove left margin */
+      width: 80%; /* Make container full width */
+    }
+    .product-gridHeader {
+      font-size: 8px; /* Reduce font size */
+    }
+    .product-productItem {
+      font-size: 8px; /* Reduce font size */
+      gap: 10px; /* Reduce gap between items */
+      padding: 8px 0; /* Adjust padding to make the row smaller */
     }
   }

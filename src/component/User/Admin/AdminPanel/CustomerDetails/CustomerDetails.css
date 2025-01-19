@@ -1,46 +1,81 @@
 .customer-adminContainer {
-    background-color: #fff;
-    padding: 32px;
-    overflow: hidden;
-    /*min-height: 100vh;*/
-    user-select: none;
-  }
-  
-  .customer-contentWrapper {
-    gap: 20px;
-    display: flex;
-    /*max-width: 1440px;
-    margin: 0 auto;
-    padding: 24px 0;*/
-  }
-  
-  .customer-sidebarColumn {
-    display: flex;
-    flex-direction: column;
-    width: 28%;
-  }
-  
-  .customer-mainColumn {
-    display: flex;
-    flex-direction: column;
-    width: 72%;
-    margin-left: 20px;
-  }
-  
-  @media (max-width: 991px) {
-    .customer-adminContainer {
+  background-color: #fff;
+  padding: 32px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.customer-contentWrapper {
+  gap: 20px;
+  display: flex;
+}
+
+.customer-sidebarColumn {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+}
+
+.customer-mainColumn {
+  display: flex;
+  flex-direction: column;
+  width: 72%;
+  margin-left: 20px;
+}
+
+/* Table styling */
+.customer-table {
+  width: 100%;
+  border-collapse: collapse; /* Ensure borders collapse together */
+}
+
+.customer-table th, .customer-table td {
+  padding: 12px 10px; /* Add padding for content spacing */
+  border: 1px solid #ccc; /* Add a border between rows and columns */
+  text-align: left;
+}
+
+/* Optional: Adjust column widths */
+.customer-table th:nth-child(1), .customer-table td:nth-child(1) {
+  width: 15%;
+}
+
+.customer-table th:nth-child(2), .customer-table td:nth-child(2) {
+  width: 50%;
+}
+
+.customer-table th:nth-child(3), .customer-table td:nth-child(3) {
+  width: 35%;
+}
+
+@media (max-width: 991px) {
+  .customer-adminContainer {
       padding: 0 20px;
-    }
-  
-    .customer-contentWrapper {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-    }
-  
-    .customer-sidebarColumn,
-    .customer-mainColumn {
-      width: 100%;
-      margin-left: 0;
-    }
   }
+
+  .customer-contentWrapper {
+      flex-direction: column; /* Stack the sidebar and table vertically */
+      align-items: stretch;
+      gap: 150px; /* Add space between the sidebar and table */
+  }
+
+  .customer-sidebarColumn,
+  .customer-mainColumn {
+      width: 100%; /* Make both columns 100% width */
+      margin-left: 0; /* Remove any left margin */
+  }
+
+  /* Adjust table styling for smaller screens */
+  .customer-table th, .customer-table td {
+      padding-left: 8px;
+      padding-right: 8px;
+  }
+}
+
+@media(max-width: 480px){
+  .customer-contentWrapper {
+    flex-direction: column; /* Stack the sidebar and table vertically */
+    align-items: stretch;
+    gap: 300px; /* Add space between the sidebar and table */
+}
+}

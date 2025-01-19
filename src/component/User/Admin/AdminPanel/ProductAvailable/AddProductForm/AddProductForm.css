@@ -76,3 +76,9 @@
 .cancel-button:hover {
     background-color: #e0e0e0;
 } 
+
+@media(max-width: 480px){
+    .add-product-modal{
+        margin-top: 120px;
+    }
+}
