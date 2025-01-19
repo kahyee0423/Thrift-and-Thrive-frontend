@@ -10,14 +10,6 @@
   background-color: #f8f9fa; /* Matches the white background of the main section */
 }
 
-
-.mainpage-sidebarColumn {
-  width: 350px;
-  background-color: #007bff; /* Use your sidebar's blue color */
-  color: #fff;
-  height: 100vh; /* Ensure it spans the full height of the screen */
-}
-
 .mainpage-main {
   flex: 1;
   background-color: #f8f9fa; /* Matches the main content's background */
@@ -91,4 +83,16 @@
   margin-bottom: 10px;
   color: #6c757d;
   font-size: 1rem;
+}
+
+@media(max-width: 991px){
+ .mainpage-main{
+  margin-top: 150px;
+ }
+}
+
+@media(max-width: 481px){
+  .mainpage-main{
+    margin-top: 300px;
+   }
 }
