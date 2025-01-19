@@ -56,7 +56,17 @@
     margin-bottom: 1rem;
     font-size: 1.25rem;
   }
+
+  .orderSummary-summaryRow ul{
+    list-style-type: none;
+  }
   
+  .shipping-total{
+    margin-left:25rem;
+  }
+  .subtotal-total{
+    margin-left:22.5rem;
+  }
   .orderSummary-summaryTotal {
     display: flex;
     justify-content: space-between;

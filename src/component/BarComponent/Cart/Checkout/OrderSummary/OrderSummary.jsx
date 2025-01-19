@@ -41,15 +41,15 @@ const OrderSummary = ({ cartItems = [], subtotal = 0 }) => {
                 )
             ))}
 
-            <div className="orderSummary-summaryRow list-style-type:none">
+            <div className="orderSummary-summaryRow">
                 <ul>
                     <li>
                         <span>Subtotal</span>
-                        <span>RM {subtotal.toFixed(2)}</span>
+                        <span className="shipping-total">RM {subtotal.toFixed(2)}</span>
                     </li>
                     <li>
                         <span>Shipping Fee</span>
-                        <span>RM {SHIPPING_FEE.toFixed(2)}</span>
+                        <span className="subtotal-total">RM {SHIPPING_FEE.toFixed(2)}</span>
                     </li>
                 </ul>
             </div>
