@@ -5,12 +5,18 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from '../BarComponent/SearchBar/SearchBar';
 import SearchResults from '../BarComponent/SearchResults/SearchResults.jsx';
 import { api } from '../../services/api';
+import MobileNav from '../MobileNav/MobileNav.jsx';
 
 const Header = () => {
+  const [openMenu, setOpenMenu] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchResults, setSearchResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
 
   const handleSearch = useCallback(async (term) => {
     const searchText = term || '';
@@ -50,6 +56,7 @@ const Header = () => {
 
   return (
     <>
+    <MobileNav isOpen={openMenu} toggleMenu={toggleMenu} />
       {!isSearchVisible ? (
         <header className="header">
           <nav className="navigation">
@@ -81,6 +88,19 @@ const Header = () => {
                 onClick={goToCart}
               />
             </div>
+          </nav>
+          <nav className="categoryNav">
+            <ul className="categories">
+              <li><a href="/men">Men</a></li>
+              <li><a href="/women">Women</a></li>
+              <li><a href="/kids">Kids</a></li>
+              <li><a href="/accessories">Accessories</a></li>
+            </ul>
+            <button className="menu-btn" onClick={toggleMenu}>
+              <span className={"material-symbols-outlined"} style={{ fontSize: "1.8rem" }}>
+                {openMenu ? "close" : "menu"}
+              </span>
+            </button>
           </nav>
           <nav className="categoryNav">
             <ul className="categories">

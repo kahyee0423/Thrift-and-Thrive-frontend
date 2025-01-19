@@ -142,6 +142,23 @@
     position: relative;
    
 }
+
+.menu-btn {
+  display: none; /* Initially hide the button */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  font-size: 2rem;
+}
+
+@media (max-width: 769px) {
+  .menu-btn {
+    display: block; /* Show the button on smaller screens */
+  }
+}
   
   @media (max-width: 991px) {
     .navigation {
