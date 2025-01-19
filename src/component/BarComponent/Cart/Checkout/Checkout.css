@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent any scrolling */
+  overflow-x: hidden; 
 }
 
 .checkout {
@@ -10,16 +10,16 @@ html, body {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  margin: 0; /* Remove auto margin to avoid horizontal centering */
-  width: 100vw; /* Ensure full width of the viewport */
-  overflow-x: hidden; /* Prevent horizontal scroll if content exceeds the viewport */
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden; 
 }
 
 .checkout-mainContent {
   flex: 1;
   padding: 2rem;
   width: 100%;
-  box-sizing: border-box; /* Include padding in the width */
+  box-sizing: border-box; 
 }
 
 .checkout-formContainer {
@@ -30,7 +30,7 @@ html, body {
 
 .checkout-formGrid {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Adjusted ratio */
+  grid-template-columns: 2fr 1fr; 
   gap: 2rem;
 }
 
@@ -39,6 +39,7 @@ html, body {
   background: #f8f9fa;
   border-radius: 4px;
   margin-bottom: 1rem;
+  width: 80%;
 }
 
 .delivery-details {
