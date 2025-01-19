@@ -5,6 +5,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%; /* Make it take full width in smaller screens */
   margin: 0 auto; /* Center the form */
+  margin-left: -1rem;
 }
   
   .delivery-sectionTitle {

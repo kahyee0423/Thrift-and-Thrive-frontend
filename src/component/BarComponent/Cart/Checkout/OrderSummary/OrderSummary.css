@@ -4,8 +4,8 @@
     padding: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 150%;
-    margin-left: -10rem;
     height: auto;
+    margin-left:-6rem;
   }
   
   .orderSummary-sectionTitle {
@@ -79,7 +79,7 @@
   @media(max-width:1700px){
     .orderSummary {
       width: 90%; 
-      margin-left: 0; 
+
     }
   }
   
