@@ -4,7 +4,6 @@ import './footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
-
       <nav className="footerNav">
         <div className="footerSection">
           <h2 className="sectionTitle">INFORMATION</h2>
@@ -33,10 +32,16 @@ const Footer = () => {
         <div className="footerSection">
           <h2 className="sectionTitle">STAY CONNECTED</h2>
           <div className="socialIcons">
-            <img src="./asset/fb.png" alt="Social media icons"/>
-            <img src="./asset/ig.png" alt="Social media icons" />
-            <img src="./asset/linkedin.png" alt="Social media icons" />
+            <div>
+              <a href="https://www.facebook.com/profile.php?id=61572482420735"><img src="./asset/fb.png" alt="Social media icons" /></a>
             </div>
+            <div>
+              <a href="https://www.instagram.com/thrif.thrive888/"><img src="./asset/ig.png" alt="Social media icons" /></a>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/company/thrift-and-thrive/about/?viewAsMember=true"><img src="./asset/linkedin.png" alt="Social media icons" /></a>
+            </div>
+          </div>
         </div>
       </nav>
     </footer>

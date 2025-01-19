@@ -1,30 +1,3 @@
-export const PRODUCTS = [ //homepage show de "new style added daily"
-  {
-    image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1b9f30d03a8c4ffad86a7ccc1c43df50d9de4149568c0d1e19afad14d02b6721?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284',
-    title: 'Text',
-    price: '$0',
-    description: 'Body text.'
-   },
-   {
-    image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1b9f30d03a8c4ffad86a7ccc1c43df50d9de4149568c0d1e19afad14d02b6721?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284',
-    title: 'Text',
-    price: '$0',
-    description: 'Body text.'
-   },
-   {
-    image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1b9f30d03a8c4ffad86a7ccc1c43df50d9de4149568c0d1e19afad14d02b6721?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284',
-    title: 'Text',
-    price: '$0',
-    description: 'Body text.'
-   },
-   {
-    image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1b9f30d03a8c4ffad86a7ccc1c43df50d9de4149568c0d1e19afad14d02b6721?placeholderIfAbsent=true&apiKey=904907665fd04df7b56e80ff4b56e284',
-    title: 'Text',
-    price: '$0',
-    description: 'Body text.'
-   },
-];
-
 export const SHOP_PRODUCTS = [ //in each categories page de
   {
     image: "./asset/delivery.png",
