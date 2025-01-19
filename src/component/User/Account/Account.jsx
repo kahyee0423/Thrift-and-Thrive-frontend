@@ -19,7 +19,7 @@ const Account = () => {
                         <h2>Not Signed In</h2>
                         <p>Please sign in to view your account details.</p>
                         <div className="auth-buttons">
-                            <Link to="/UserSignIn" className="auth-button">
+                            <Link to="/UserLogin" className="auth-button">
                                 Sign In
                             </Link>
                             <Link to="/UserSignUp" className="auth-button">
