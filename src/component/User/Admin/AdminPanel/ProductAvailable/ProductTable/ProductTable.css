@@ -137,11 +137,7 @@
   }
   
   @media(max-width: 468px){
-    .product-productListContainer {
-      margin-top: 270px; /* Adjust top margin to avoid overlap */
-      margin-left: 0; /* Remove left margin */
-      width: 80%; /* Make container full width */
-    }
+    
     .product-gridHeader {
       font-size: 8px; /* Reduce font size */
     }
