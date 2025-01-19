@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); /*"KauShan Script" font*/
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); /*"Kaushan Script" font*/
 
 .navigationContainer {
   display: flex;
@@ -7,7 +7,7 @@
   padding: 20px;
   background-color: lightblue;
   height: 50px;
-  user-select: None;
+  user-select: none;
 }
 
 .brandName {
@@ -18,87 +18,104 @@
   font-family: "Kaushan Script", serif;
   font-weight: 400;
   font-style: normal;
-  align-self: center; 
-  width: 30%;
+  align-self: center;
   cursor: pointer;
+  width: 30%;
 }
 
 .navigationLinks {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   font-size: 1.1em;
   margin: 0;
   padding: 0;
   white-space: nowrap;
   align-items: center;
   width: 50%;
+  justify-content: center;
 }
 
 .iconContainer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   margin: 0;
   padding: 0;
-
 }
 
-  @media (max-width: 991px) {
-    .navigationContainer {
-      padding: 0 20px;
-    }
+/* Mobile responsiveness adjustments */
+@media (max-width: 991px) {
+  .navigationContainer {
+    padding: 0 20px;
+    height: auto; /* Adjust height for mobile */
   }
   
   .brandName {
     color: rgba(0, 0, 0, 1);
     flex-grow: 1;
-    width: 178px;
+    width: auto; /* Allow brand name to adjust with screen size */
     font: 400 36px Kaushan Script, -apple-system, Roboto, Helvetica, sans-serif;
   }
   
   .navigationLinks {
-    align-self: start;
     display: flex;
-    margin-top: 19px;
-    align-items: start;
-    gap: 40px 54px;
+    margin-top: 10px;
+    gap: 20px; /* Adjust gap for better spacing on smaller screens */
     color: rgba(0, 0, 0, 1);
-    white-space: nowrap;
     font: 400 15px Roboto, sans-serif;
-  }
-  
-  @media (max-width: 991px) {
-    .navigationLinks {
-      max-width: 100%;
-      white-space: initial;
-    }
-  }
-  
-  .navLink {
-    line-height: 1;
-    letter-spacing: 0.25px;
+    flex-direction: column; /* Stack links vertically on mobile */
+    align-items: flex-start;
+    width: 100%; /* Make sure links take up full width */
   }
   
   .iconContainer {
     display: flex;
     align-items: center;
-    gap: 40px 48px;
+    gap: 20px;
     margin: auto 0;
   }
-  
+
   .icon {
     aspect-ratio: 1;
     object-fit: contain;
     object-position: center;
-    width: 40px;
-    align-self: stretch;
-    margin: auto 0;
+    width: 35px; /* Adjust icon size for mobile */
   }
   
   .cartIcon {
     aspect-ratio: 1;
     object-fit: contain;
     object-position: center;
-    width: 45px;
-    align-self: stretch;
+    width: 40px;
   }
+  
+  /* Adjust the search icon and menu button for better alignment on mobile */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+  }
+}
+
+/* Styles for smaller mobile screens */
+@media (max-width: 480px) {
+  .brandName {
+    font-size: 1.5em; /* Adjust font size for very small screens */
+  }
+  
+  .navigationLinks {
+    font-size: 1em; /* Adjust font size for better readability on small screens */
+    gap: 15px; /* Reduce gap */
+  }
+  
+  .icon {
+    width: 30px; /* Further reduce icon size for very small screens */
+  }
+
+  .cartIcon {
+    width: 35px; /* Reduce cart icon size for very small screens */
+  }
+}

@@ -8,7 +8,6 @@ import SearchResults from '../BarComponent/SearchResults/SearchResults.jsx';
 import { api } from '../../services/api';
 
 const navigationLinks = [
-  { label: 'Home', href: '/' },
   { label: 'Men', href: '/men' },
   { label: 'Women', href: '/women' },
   { label: 'Kids', href: '/kids' },
