@@ -38,7 +38,6 @@
   
   .storyImage {
     width: 36%;
-    aspect-ratio: 0.97;
     object-fit: contain;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
