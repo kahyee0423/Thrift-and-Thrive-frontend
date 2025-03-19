@@ -1,7 +1,8 @@
-💻 Contributors: Hor Kah Yee (@kahyee0423)
-                 Tan Tse Han (@tsehan51)
-                 Padma Pireeyaa A/P Soundra Rajan (@Pireeyaa)
-                 Tan Mei Wei (@MeiWeii)
+## 💻 Contributors: 
+Hor Kah Yee (@kahyee0423)
+Tan Tse Han (@tsehan51)
+Padma Pireeyaa A/P Soundra Rajan (@Pireeyaa)
+Tan Mei Wei (@MeiWeii)
               
 # ✨ Description of Program 📝
 This project focuses on developing an e-commerce website dedicated to the buying and selling of preloved clothing items. The platform aims to contribute to sustainable fashion by encouraging the reuse and recycling of apparel and accessories. Inspired by major e-commerce platforms like Shopee, Lazada and Carousell, the website is designed to offer a user-friendly shopping experience while promoting environmentally conscious consumer behavior. The initiative aligns with Sustainable Development Goal (SDG) 12, particularly Target 12.5, which focuses on substantially reducing waste generation through prevention, reduction, recycling, and reuse.
